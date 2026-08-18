@@ -10,7 +10,6 @@
     --c0:#E4572E; --c1:#1F7A8C; --c2:#6A4C93; --c3:#1F7A4A;
     --bg:#f4f2ee; --card:#fff; --ink:#15181c; --ink2:#3e434a; --mut:#6d737e;
     --line:#e4e0d8; --soft:#faf8f4; --code:#15181c; --codetx:#e9ebee;
-    --wr-bg:#fef2f2; --wr-bd:#f7b0b0; --wr-tx:#9b1c1c;
     --wa-bg:#fffbeb; --wa-bd:#f6cf6b; --wa-tx:#8a4d09;
     --wg-bg:#edfcf4; --wg-bd:#8fe3b6; --wg-tx:#0a6045;
     --chip:#f0eee8; --chipbd:#dcd7cc;
@@ -19,7 +18,6 @@
   @media (prefers-color-scheme:dark){:root{
     --bg:#131519; --card:#1b1e24; --ink:#eceef1; --ink2:#c2c7cf; --mut:#8f98a5;
     --line:#2b3037; --soft:#21252b; --code:#0d0f12; --codetx:#dfe3e8;
-    --wr-bg:#2a1618; --wr-bd:#7d2b31; --wr-tx:#ffb3b3;
     --wa-bg:#292112; --wa-bd:#7a5d1b; --wa-tx:#ffd88a;
     --wg-bg:#11241c; --wg-bd:#2d684a; --wg-tx:#8bdfb3;
     --chip:#242931; --chipbd:#323942;
@@ -29,8 +27,7 @@
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    font-size:16px;line-height:1.55;overflow-x:hidden;
-    -webkit-font-smoothing:antialiased}
+    font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   .wrap{max-width:660px;margin:0 auto;padding:14px 14px 54px}
   b,strong{font-weight:650}
 
@@ -61,14 +58,12 @@
   h3{font-size:12px;margin:18px 0 8px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 
   .warn{border-radius:16px;padding:15px 17px;margin-bottom:14px;font-size:14.5px;box-shadow:var(--sh)}
-  .warn.red{background:var(--wr-bg);border:1px solid var(--wr-bd)}
   .warn.amber{background:var(--wa-bg);border:1px solid var(--wa-bd)}
   .warn.green{background:var(--wg-bg);border:1px solid var(--wg-bd)}
   .warn b.t{display:block;font-size:15px;margin-bottom:6px}
-  .warn.red b.t{color:var(--wr-tx)} .warn.amber b.t{color:var(--wa-tx)} .warn.green b.t{color:var(--wg-tx)}
+  .warn.amber b.t{color:var(--wa-tx)} .warn.green b.t{color:var(--wg-tx)}
   .warn ul{margin:9px 0 0;padding-left:19px} .warn li{margin:5px 0}
 
-  /* ---------------- Karte ---------------- */
   .mapbar{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:9px}
   .seg{display:inline-flex;border:1px solid var(--chipbd);border-radius:10px;overflow:hidden;background:var(--chip)}
   .seg button{border:0;background:transparent;color:var(--ink2);padding:8px 12px;font-size:12.5px;
@@ -125,7 +120,6 @@
   .maphint b{color:var(--ink2)}
   .mapstat{font-size:12.5px;color:var(--mut);margin-top:9px}
 
-  /* ---------------- Tage ---------------- */
   .day{border:1px solid var(--line);border-radius:16px;background:var(--card);margin-bottom:14px;
     overflow:hidden;box-shadow:var(--sh);scroll-margin-top:60px}
   .day>.hd{padding:15px 17px;color:#fff}
@@ -162,21 +156,23 @@
   .eve b.t{display:block;margin-bottom:6px;font-size:13.5px}
   .eve ul{margin:7px 0 0;padding-left:18px} .eve li{margin:5px 0}
 
-  .stay{border:1px solid var(--line);border-radius:13px;padding:14px;margin-bottom:11px;font-size:14px;background:var(--soft)}
-  .stay b.t{display:block;font-size:14.5px;margin-bottom:2px}
-  .stay .ad{color:var(--mut);font-size:13px;margin-bottom:9px}
+  .stay{border:1px solid var(--line);border-radius:13px;padding:15px;margin-bottom:12px;font-size:14px;background:var(--soft)}
+  .stay b.t{display:block;font-size:15px;margin-bottom:1px}
+  .stay .ad{color:var(--mut);font-size:13px;margin-bottom:10px}
   .stay .row{display:flex;gap:10px;padding:7px 0;border-top:1px solid var(--line)}
-  .stay .row span:first-child{flex:none;width:78px;color:var(--mut);font-size:12.5px}
+  .stay .row span:first-child{flex:none;width:88px;color:var(--mut);font-size:12.5px}
+  .stay a{color:#2563eb;text-decoration:none;word-break:break-word}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);font-weight:700}
+  td.tm{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--mut);width:66px}
 
   .chk{list-style:none;margin:0;padding:0;font-size:14.5px}
   .chk li{padding:11px 0 11px 27px;position:relative;border-bottom:1px solid var(--line)}
   .chk li:last-child{border-bottom:0}
   .chk li:before{content:"";position:absolute;left:0;top:15px;width:14px;height:14px;
     border:2px solid var(--chipbd);border-radius:4px}
-  .chk .p{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;padding:2px 6px;
-    border-radius:5px;margin-right:6px;vertical-align:1px}
-  .p.now{background:var(--wr-bg);color:var(--wr-tx)} .p.soon{background:var(--wa-bg);color:var(--wa-tx)}
-  .p.ok{background:var(--chip);color:var(--ink2)}
 
   .note{font-size:12.5px;color:var(--mut);margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}
   footer{text-align:center;font-size:12px;color:var(--mut);margin-top:24px;line-height:1.8}
@@ -191,7 +187,7 @@
   <p>Do 20. – So 23. August 2026 · Wolfsburg → Erfurt → Bamberg → Wolfsburg</p>
   <div class="facts">
     <span class="fact">5 Fahrer</span><span class="fact">4 Tage</span>
-    <span class="fact" id="totkm">~1.180 km</span><span class="fact">Navi: calimoto</span>
+    <span class="fact" id="totkm">~1.185 km</span><span class="fact">Navi: calimoto</span>
     <span class="fact">Start Do 15:00</span>
   </div>
 </header>
@@ -199,25 +195,22 @@
 <nav class="days"><div class="in">
   <a class="n0" href="#t0">Do · Harz</a>
   <a class="n1" href="#t1">Fr · Rennsteig</a>
-  <a class="n2" href="#t2">Sa · Fränkische Schweiz</a>
+  <a class="n2" href="#t2">Sa · Fränk. Schweiz</a>
   <a class="n3" href="#t3">So · Heimweg</a>
-  <a class="n4" href="#info">Unterkünfte &amp; To-do</a>
+  <a class="n4" href="#unterkuenfte">Unterkünfte</a>
+  <a class="n4" href="#kerwa">Sandkerwa</a>
 </div></nav>
 
-<div class="warn red">
-  <b class="t">⚠︎ Wichtig für Bamberg – bitte vor der Abfahrt klären</b>
-  Unsere Unterkunft <b>Obere Sandstraße 2b</b> liegt mitten im Festgebiet der <b>Sandkerwa</b> (20.–24.08.). Das Sandgebiet ist vom <b>19. bis 26. August für den Durchgangsverkehr gesperrt</b> – wir können Freitag also nicht mit fünf Maschinen vor die Haustür fahren.
-  <ul>
-    <li><b>Vermieter jetzt anschreiben:</b> Innenhof, Anliegergenehmigung oder Stellplatz für 5 Motorräder? Wichtigste offene Frage der Tour.</li>
-    <li><b>Plan B:</b> zentrales Parkhaus (Geyerswörth, Georgendamm), Gepäck zu Fuß in den Sand.</li>
-    <li><b>Plan C:</b> P+R Heinrichsdamm oder Kronacher Straße, 4 € inkl. Bus zum ZOB.</li>
-    <li>Nachtbusse Do–Sa bis 1:30 Uhr, So bis 0:50 Uhr.</li>
-  </ul>
+<div class="warn green">
+  <b class="t">✓ Beide Unterkünfte gebucht, Motorräder untergebracht</b>
+  In <b>Erfurt</b> schlüsselloser Check-in ab 16:00, Motorradstellplätze wenige Gehminuten entfernt. In <b>Bamberg</b> Wetzelstraße 13 mit <b>Stellplätzen im Hinterhof</b> – außerhalb des gesperrten Sandgebiets, Zufahrt also auch abends frei. Ins Festgebiet sind es 20 Minuten zu Fuß.
 </div>
 
-<div class="warn green">
-  <b class="t">✓ Der Glücksgriff</b>
-  Wir schlafen beide Male mittendrin. In Erfurt liegt der <b>Domplatz 11</b> direkt an der Bühne der <b>DomStufen-Festspiele</b> („Jesus Christ Superstar“, 7.–30.08.). In Bamberg wohnen wir zwei Nächte <b>im Sand selbst</b> – Schlenkerla und Klosterbräu um die Ecke, Klein-Venedig in drei Minuten. Ohrstöpsel einpacken.
+<div class="warn amber">
+  <b class="t">Wetter · Stand 18.08.</b>
+  <b>Donnerstag</b> ist der kritische Tag: in Thüringen 27–30 °C, in den Berglagen 22–26 °C, wechselnd bewölkt mit einzelnen Schauern und Gewittern – am ehesten über dem Thüringer Wald, abends Besserung. Im Harz also mit nasser Fahrbahn rechnen.<br>
+  <b>Freitag</b> 25 °C, <b>Samstag</b> 22 °C, beide deutlich trockener. Nachts 12–13 °C – für den Rückweg vom Fest eine Jacke einpacken.<br>
+  <span style="opacity:.8">Regenzeug gehört ans Motorrad, nicht in den Koffer.</span>
 </div>
 
 <div class="card mapcard">
@@ -239,8 +232,8 @@
     <button type="button" class="dchip" data-d="3"><i style="background:var(--c3)"></i>So</button>
   </div>
   <div class="mapwrap" id="mapwrap">
-    <div id="mapstatic"><svg viewBox="0 0 356 760" width="356" height="760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Übersichtskarte der vier Etappen"><defs><clipPath id="smcp"><rect x="0" y="0" width="356" height="760" rx="10"/></clipPath><linearGradient id="smbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f6f0"/><stop offset="1" stop-color="#f1eee5"/></linearGradient></defs><rect x="0" y="0" width="356" height="760" fill="url(#smbg)" rx="10"/><g clip-path="url(#smcp)"><path d="M104.2,173.3L135.0,163.5L165.7,170.8L201.1,188.0L231.8,212.4L251.8,241.8L239.5,266.2L211.8,280.9L178.0,276.0L139.6,258.9L113.4,232.0L101.1,202.6Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M119.3,184.0L143.3,176.4L167.3,182.1L194.8,195.5L218.8,214.6L234.4,237.5L224.8,256.6L203.2,268.0L176.8,264.2L146.9,250.8L126.5,229.8L116.9,206.9Z" fill="#d2dac3"/><path d="M138.5,197.7L153.9,192.9L169.2,196.5L186.9,205.1L202.3,217.3L212.3,232.0L206.1,244.2L192.3,251.6L175.4,249.1L156.2,240.6L143.1,227.1L136.9,212.4Z" fill="#c3ceb0"/><path d="M218.0,290.7L239.5,285.8L254.9,295.6L245.6,310.3L224.1,312.7Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M222.0,292.5L238.8,288.7L250.8,296.4L243.6,307.8L226.8,309.7Z" fill="#d2dac3"/><path d="M227.2,294.9L237.9,292.4L245.6,297.3L241.0,304.7L230.3,305.9Z" fill="#c3ceb0"/><path d="M113.4,403.2L144.2,427.7L174.9,452.2L205.7,476.6L239.5,506.0L267.1,530.4L257.9,550.0L221.0,525.6L190.3,501.1L159.6,476.6L128.8,452.2L101.1,427.7Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M128.9,419.6L152.9,438.6L176.8,457.7L200.8,476.8L227.2,499.7L248.8,518.8L241.6,534.1L212.8,515.0L188.8,495.9L164.9,476.8L140.9,457.7L119.3,438.6Z" fill="#d2dac3"/><path d="M148.5,440.3L163.9,452.6L179.3,464.8L194.7,477.0L211.6,491.7L225.4,503.9L220.8,513.7L202.3,501.5L187.0,489.3L171.6,477.0L156.2,464.8L142.4,452.6Z" fill="#c3ceb0"/><path d="M267.1,530.4L301.0,550.0L325.6,579.4L310.2,608.7L276.4,603.8L254.9,574.5L257.9,550.0Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M271.0,539.4L297.4,554.6L316.6,577.5L304.6,600.4L278.2,596.6L261.4,573.7L263.8,554.6Z" fill="#d2dac3"/><path d="M275.9,550.7L292.8,560.5L305.1,575.2L297.4,589.9L280.5,587.4L269.8,572.7L271.3,560.5Z" fill="#c3ceb0"/><path d="M236.4,647.9L277.9,643.0L308.6,667.4L310.2,706.6L276.4,726.2L242.6,716.4L227.2,687.0Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M243.5,656.0L275.8,652.2L299.8,671.3L301.0,701.8L274.6,717.1L248.3,709.5L236.3,686.6Z" fill="#d2dac3"/><path d="M252.4,666.4L273.2,663.9L288.6,676.2L289.3,695.8L272.4,705.5L255.5,700.6L247.8,686.0Z" fill="#c3ceb0"/><path d="M150.3,598.9L190.3,613.6L181.1,647.9L147.3,638.1Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M154.1,604.6L185.2,616.0L178.0,642.8L151.7,635.1Z" fill="#d2dac3"/><path d="M158.8,611.8L178.8,619.1L174.2,636.3L157.3,631.4Z" fill="#c3ceb0"/><path d="M125.7,662.6L165.7,677.2L156.5,716.4L119.6,711.5Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M129.3,669.0L160.5,680.5L153.3,711.0L124.5,707.2Z" fill="#d2dac3"/><path d="M133.8,677.2L153.8,684.6L149.2,704.1L130.7,701.7Z" fill="#c3ceb0"/><path d="M52.0,491.3L88.9,506.0L91.9,550.0L55.0,559.8L39.7,530.4Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M54.9,499.3L83.7,510.7L86.1,545.1L57.3,552.7L45.3,529.8Z" fill="#d2dac3"/><path d="M58.7,509.4L77.2,516.7L78.7,538.8L60.3,543.7L52.6,529.0Z" fill="#c3ceb0"/><path d="M15.1,212.4L55.0,224.7L52.0,261.4L18.1,254.0Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M19.5,218.1L50.6,227.6L48.2,256.2L21.9,250.5Z" fill="#d2dac3"/><path d="M25.1,225.3L45.0,231.4L43.5,249.7L26.6,246.1Z" fill="#c3ceb0"/><path d="M135.0,508.4L116.5,471.7L107.3,442.4L119.6,410.6L101.1,386.1L58.1,349.4" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M267.1,515.8L281.0,484.0L276.4,466.8L288.7,442.4L314.8,415.5L331.7,383.7L347.1,359.2" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M261.0,598.9L231.8,613.6L221.0,618.5L214.9,647.9L207.2,669.9L178.0,667.4L147.3,679.7L113.4,672.3" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M227.2,740.8L233.3,711.5L218.0,691.9L207.2,669.9" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M291.7,674.8L276.4,691.9L257.9,696.8L239.5,701.7L233.3,711.5" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M159.6,354.3L208.7,339.6L239.5,320.1L277.9,329.9L310.2,349.4" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M211.8,476.6L231.8,442.4L273.3,403.2" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M138.0,207.5L138.0,178.2L147.3,141.5L156.5,99.9" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M52.0,305.4L58.1,266.2L67.3,227.1L64.3,173.3" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M45.8,305.4L57.5,265.9L70.2,225.4L97.9,180.2L116.5,141.5L125.6,116.9L151.4,87.9L191.3,50.3" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M57.5,265.9L116.5,263.8L185.7,271.1L269.8,282.8" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M269.8,282.8L254.9,325.0L239.5,373.9L229.2,403.6" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M207.5,669.5L224.1,618.5L218.7,579.8L208.7,532.9L176.5,493.8L201.1,459.5L229.2,403.6" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M229.2,403.6L288.7,415.5L319.4,422.8" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><text x="167.2" y="219.8" text-anchor="middle" font-size="7.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(31 167.2 219.8)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">HARZ</text><text x="167.2" y="219.8" text-anchor="middle" font-size="7.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(31 167.2 219.8)" fill="#7f9070">HARZ</text><text x="154.9" y="447.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(43 154.9 447.3)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">THÜRINGER WALD</text><text x="154.9" y="447.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(43 154.9 447.3)" fill="#7f9070">THÜRINGER WALD</text><text x="304" y="562.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(52 304 562.3)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">FRANKENWALD</text><text x="304" y="562.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(52 304 562.3)" fill="#7f9070">FRANKENWALD</text><text x="296.4" y="691.9" text-anchor="middle" font-size="6.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(62 296.4 691.9)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">FRÄNKISCHE SCHWEIZ</text><text x="296.4" y="691.9" text-anchor="middle" font-size="6.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(62 296.4 691.9)" fill="#7f9070">FRÄNKISCHE SCHWEIZ</text><text x="167.2" y="623.4" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(44 167.2 623.4)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">HASSBERGE</text><text x="167.2" y="623.4" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(44 167.2 623.4)" fill="#7f9070">HASSBERGE</text><text x="141.1" y="689.5" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(56 141.1 689.5)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">STEIGERWALD</text><text x="141.1" y="689.5" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(56 141.1 689.5)" fill="#7f9070">STEIGERWALD</text><text x="65.8" y="528" text-anchor="middle" font-size="6.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">RHÖN</text><text x="65.8" y="528" text-anchor="middle" font-size="6.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="#7f9070">RHÖN</text><text x="33.5" y="236.9" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">SOLLING</text><text x="33.5" y="236.9" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="#7f9070">SOLLING</text><g class="sr sr3"><path d="M207.5,669.5L233.3,607.2L274.9,584.0L295.6,569.9L291.7,545.1L289.5,522.4L290.3,521.0L283.0,512.5L280.5,484.0L276.4,466.7L254.9,435.0L229.2,403.6L247.2,349.4L269.8,282.8L57.5,265.9L70.2,225.4L97.9,180.2L125.6,116.9L151.4,87.9L191.3,50.3" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M207.5,669.5L233.3,607.2L274.9,584.0L295.6,569.9L291.7,545.1L289.5,522.4L290.3,521.0L283.0,512.5L280.5,484.0L276.4,466.7L254.9,435.0L229.2,403.6L247.2,349.4L269.8,282.8L57.5,265.9L70.2,225.4L97.9,180.2L125.6,116.9L151.4,87.9L191.3,50.3" fill="none" stroke="#1F7A4A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="sr sr2"><path d="M207.5,669.5L229.2,649.1L253.6,677.0L261.3,669.5L277.9,679.7L286.6,699.1L280.5,696.0L272.8,697.3L276.2,700.1L268.9,692.6L265.1,696.0L252.3,696.7L247.2,716.4L233.2,711.6L221.5,687.8L207.5,669.5" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M207.5,669.5L229.2,649.1L253.6,677.0L261.3,669.5L277.9,679.7L286.6,699.1L280.5,696.0L272.8,697.3L276.2,700.1L268.9,692.6L265.1,696.0L252.3,696.7L247.2,716.4L233.2,711.6L221.5,687.8L207.5,669.5" fill="none" stroke="#6A4C93" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="sr sr1"><path d="M229.2,403.6L215.9,437.9L236.1,453.7L210.9,475.7L201.1,479.9L201.1,492.1L244.6,516.6L249.7,524.7L247.2,537.0L251.0,555.3L242.5,563.8L218.7,579.8L227.7,615.6L234.0,612.7L224.1,618.5L221.5,643.0L211.8,657.7L207.5,669.5" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M229.2,403.6L215.9,437.9L236.1,453.7L210.9,475.7L201.1,479.9L201.1,492.1L244.6,516.6L249.7,524.7L247.2,537.0L251.0,555.3L242.5,563.8L218.7,579.8L227.7,615.6L234.0,612.7L224.1,618.5L221.5,643.0L211.8,657.7L207.5,669.5" fill="none" stroke="#1F7A8C" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="sr sr0"><path d="M191.3,50.3L151.4,87.9L125.6,116.9L136.3,177.0L139.1,188.0L138.0,195.3L138.7,202.0L152.8,202.0L164.5,220.6L172.9,240.0L172.9,255.7L192.6,275.3L211.8,285.8L231.8,292.3L241.1,297.4L239.5,311.4L229.2,337.2L231.8,371.4L229.2,403.6" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M191.3,50.3L151.4,87.9L125.6,116.9L136.3,177.0L139.1,188.0L138.0,195.3L138.7,202.0L152.8,202.0L164.5,220.6L172.9,240.0L172.9,255.7L192.6,275.3L211.8,285.8L231.8,292.3L241.1,297.4L239.5,311.4L229.2,337.2L231.8,371.4L229.2,403.6" fill="none" stroke="#E4572E" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="185.8" y="44.8" width="11" height="11" rx="2.5" fill="#15181c"/><text x="203.3" y="54" text-anchor="start" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Wolfsburg</text><text x="203.3" y="54" text-anchor="start" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="#15181c">Wolfsburg</text><circle cx="151.4" cy="87.9" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="158.9" y="91.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Braunschweig</text><text x="158.9" y="91.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Braunschweig</text><circle cx="136.3" cy="177.0" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="143.8" y="180.7" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Goslar</text><text x="143.8" y="180.7" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Goslar</text><circle cx="164.5" cy="220.6" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="172" y="224.3" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Braunlage</text><text x="172" y="224.3" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Braunlage</text><circle cx="192.6" cy="275.3" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="200.1" y="279" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Nordhausen</text><text x="200.1" y="279" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Nordhausen</text><circle cx="241.1" cy="297.4" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="233.6" y="301.1" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Kyffhäuser</text><text x="233.6" y="301.1" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Kyffhäuser</text><circle cx="57.5" cy="265.9" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="65" y="269.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Göttingen</text><text x="65" y="269.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Göttingen</text><circle cx="229.2" cy="403.6" r="7.5" fill="#fff" stroke="#15181c" stroke-width="3"/><text x="217.2" y="407.3" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Erfurt</text><text x="217.2" y="407.3" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="#15181c">Erfurt</text><circle cx="210.9" cy="475.7" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="203.4" y="479.4" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Ilmenau</text><text x="203.4" y="479.4" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Ilmenau</text><circle cx="280.5" cy="484.0" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="273" y="487.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Saalfeld</text><text x="273" y="487.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Saalfeld</text><circle cx="251.0" cy="555.3" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="243.5" y="559" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Sonneberg</text><text x="243.5" y="559" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Sonneberg</text><circle cx="218.7" cy="579.8" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="211.2" y="583.5" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Coburg</text><text x="211.2" y="583.5" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Coburg</text><circle cx="274.9" cy="584.0" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="267.4" y="587.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Kronach</text><text x="267.4" y="587.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Kronach</text><circle cx="233.3" cy="607.2" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="225.8" y="610.9" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Lichtenfels</text><text x="225.8" y="610.9" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Lichtenfels</text><circle cx="207.5" cy="669.5" r="7.5" fill="#fff" stroke="#15181c" stroke-width="3"/><text x="195.5" y="673.2" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Bamberg</text><text x="195.5" y="673.2" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="#15181c">Bamberg</text><circle cx="286.6" cy="699.1" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="279.1" y="702.8" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Pottenstein</text><text x="279.1" y="702.8" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Pottenstein</text><circle cx="233.2" cy="711.6" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="225.7" y="715.3" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Forchheim</text><text x="225.7" y="715.3" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Forchheim</text><rect x="11" y="723" width="161.9" height="24" rx="5" fill="#fff" opacity=".82"/><line x1="16" y1="738" x2="125.9" y2="738" stroke="#5f5a50" stroke-width="1.8"/><line x1="16" y1="734.5" x2="16" y2="741.5" stroke="#5f5a50" stroke-width="1.8"/><line x1="125.9" y1="734.5" x2="125.9" y2="741.5" stroke="#5f5a50" stroke-width="1.8"/><text x="132.9" y="741.5" font-size="9.5" fill="#5f5a50" font-family="Helvetica,Arial,sans-serif">50 km</text><g transform="translate(330,26)"><circle cx="0" cy="0" r="13" fill="#fff" opacity=".85"/><path d="M0,-9 L4,4 L0,1.4 L-4,4 Z" fill="#5f5a50"/><text x="0" y="11" text-anchor="middle" font-size="7.5" font-weight="700" fill="#5f5a50" font-family="Helvetica,Arial,sans-serif">N</text></g></g><rect x=".5" y=".5" width="355" height="759" rx="10" fill="none" stroke="#e0dcd2"/></svg></div>
-    <div id="map" hidden></div>
+    <div id="mapstatic"><svg viewBox="0 0 356 760" width="356" height="760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Übersichtskarte der vier Etappen"><defs><clipPath id="smcp"><rect x="0" y="0" width="356" height="760" rx="10"/></clipPath><linearGradient id="smbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f6f0"/><stop offset="1" stop-color="#f1eee5"/></linearGradient></defs><rect x="0" y="0" width="356" height="760" fill="url(#smbg)" rx="10"/><g clip-path="url(#smcp)"><path d="M104.2,173.3L135.0,163.5L165.7,170.8L201.1,188.0L231.8,212.4L251.8,241.8L239.5,266.2L211.8,280.9L178.0,276.0L139.6,258.9L113.4,232.0L101.1,202.6Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M119.3,184.0L143.3,176.4L167.3,182.1L194.8,195.5L218.8,214.6L234.4,237.5L224.8,256.6L203.2,268.0L176.8,264.2L146.9,250.8L126.5,229.8L116.9,206.9Z" fill="#d2dac3"/><path d="M138.5,197.7L153.9,192.9L169.2,196.5L186.9,205.1L202.3,217.3L212.3,232.0L206.1,244.2L192.3,251.6L175.4,249.1L156.2,240.6L143.1,227.1L136.9,212.4Z" fill="#c3ceb0"/><path d="M218.0,290.7L239.5,285.8L254.9,295.6L245.6,310.3L224.1,312.7Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M222.0,292.5L238.8,288.7L250.8,296.4L243.6,307.8L226.8,309.7Z" fill="#d2dac3"/><path d="M227.2,294.9L237.9,292.4L245.6,297.3L241.0,304.7L230.3,305.9Z" fill="#c3ceb0"/><path d="M113.4,403.2L144.2,427.7L174.9,452.2L205.7,476.6L239.5,506.0L267.1,530.4L257.9,550.0L221.0,525.6L190.3,501.1L159.6,476.6L128.8,452.2L101.1,427.7Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M128.9,419.6L152.9,438.6L176.8,457.7L200.8,476.8L227.2,499.7L248.8,518.8L241.6,534.1L212.8,515.0L188.8,495.9L164.9,476.8L140.9,457.7L119.3,438.6Z" fill="#d2dac3"/><path d="M148.5,440.3L163.9,452.6L179.3,464.8L194.7,477.0L211.6,491.7L225.4,503.9L220.8,513.7L202.3,501.5L187.0,489.3L171.6,477.0L156.2,464.8L142.4,452.6Z" fill="#c3ceb0"/><path d="M267.1,530.4L301.0,550.0L325.6,579.4L310.2,608.7L276.4,603.8L254.9,574.5L257.9,550.0Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M271.0,539.4L297.4,554.6L316.6,577.5L304.6,600.4L278.2,596.6L261.4,573.7L263.8,554.6Z" fill="#d2dac3"/><path d="M275.9,550.7L292.8,560.5L305.1,575.2L297.4,589.9L280.5,587.4L269.8,572.7L271.3,560.5Z" fill="#c3ceb0"/><path d="M236.4,647.9L277.9,643.0L308.6,667.4L310.2,706.6L276.4,726.2L242.6,716.4L227.2,687.0Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M243.5,656.0L275.8,652.2L299.8,671.3L301.0,701.8L274.6,717.1L248.3,709.5L236.3,686.6Z" fill="#d2dac3"/><path d="M252.4,666.4L273.2,663.9L288.6,676.2L289.3,695.8L272.4,705.5L255.5,700.6L247.8,686.0Z" fill="#c3ceb0"/><path d="M150.3,598.9L190.3,613.6L181.1,647.9L147.3,638.1Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M154.1,604.6L185.2,616.0L178.0,642.8L151.7,635.1Z" fill="#d2dac3"/><path d="M158.8,611.8L178.8,619.1L174.2,636.3L157.3,631.4Z" fill="#c3ceb0"/><path d="M125.7,662.6L165.7,677.2L156.5,716.4L119.6,711.5Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M129.3,669.0L160.5,680.5L153.3,711.0L124.5,707.2Z" fill="#d2dac3"/><path d="M133.8,677.2L153.8,684.6L149.2,704.1L130.7,701.7Z" fill="#c3ceb0"/><path d="M52.0,491.3L88.9,506.0L91.9,550.0L55.0,559.8L39.7,530.4Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M54.9,499.3L83.7,510.7L86.1,545.1L57.3,552.7L45.3,529.8Z" fill="#d2dac3"/><path d="M58.7,509.4L77.2,516.7L78.7,538.8L60.3,543.7L52.6,529.0Z" fill="#c3ceb0"/><path d="M15.1,212.4L55.0,224.7L52.0,261.4L18.1,254.0Z" fill="#dfe4d4" stroke="#cdd5bd" stroke-width=".7" stroke-linejoin="round"/><path d="M19.5,218.1L50.6,227.6L48.2,256.2L21.9,250.5Z" fill="#d2dac3"/><path d="M25.1,225.3L45.0,231.4L43.5,249.7L26.6,246.1Z" fill="#c3ceb0"/><path d="M135.0,508.4L116.5,471.7L107.3,442.4L119.6,410.6L101.1,386.1L58.1,349.4" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M267.1,515.8L281.0,484.0L276.4,466.8L288.7,442.4L314.8,415.5L331.7,383.7L347.1,359.2" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M261.0,598.9L231.8,613.6L221.0,618.5L214.9,647.9L207.2,669.9L178.0,667.4L147.3,679.7L113.4,672.3" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M227.2,740.8L233.3,711.5L218.0,691.9L207.2,669.9" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M291.7,674.8L276.4,691.9L257.9,696.8L239.5,701.7L233.3,711.5" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M159.6,354.3L208.7,339.6L239.5,320.1L277.9,329.9L310.2,349.4" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M211.8,476.6L231.8,442.4L273.3,403.2" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M138.0,207.5L138.0,178.2L147.3,141.5L156.5,99.9" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M52.0,305.4L58.1,266.2L67.3,227.1L64.3,173.3" fill="none" stroke="#a3c6dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M45.8,305.4L57.5,265.9L70.2,225.4L97.9,180.2L116.5,141.5L125.6,116.9L151.4,87.9L191.3,50.3" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M57.5,265.9L116.5,263.8L185.7,271.1L269.8,282.8" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M269.8,282.8L254.9,325.0L239.5,373.9L229.2,403.6" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M208.6,671.0L224.1,618.5L218.7,579.8L208.7,532.9L176.5,493.8L201.1,459.5L229.2,403.6" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><path d="M229.2,403.6L288.7,415.5L319.4,422.8" fill="none" stroke="#c9c2b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4.5"/><text x="167.2" y="219.8" text-anchor="middle" font-size="7.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(31 167.2 219.8)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">HARZ</text><text x="167.2" y="219.8" text-anchor="middle" font-size="7.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(31 167.2 219.8)" fill="#7f9070">HARZ</text><text x="154.9" y="447.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(43 154.9 447.3)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">THÜRINGER WALD</text><text x="154.9" y="447.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(43 154.9 447.3)" fill="#7f9070">THÜRINGER WALD</text><text x="304" y="562.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(52 304 562.3)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">FRANKENWALD</text><text x="304" y="562.3" text-anchor="middle" font-size="7" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(52 304 562.3)" fill="#7f9070">FRANKENWALD</text><text x="296.4" y="691.9" text-anchor="middle" font-size="6.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(62 296.4 691.9)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">FRÄNKISCHE SCHWEIZ</text><text x="296.4" y="691.9" text-anchor="middle" font-size="6.4" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(62 296.4 691.9)" fill="#7f9070">FRÄNKISCHE SCHWEIZ</text><text x="167.2" y="623.4" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(44 167.2 623.4)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">HASSBERGE</text><text x="167.2" y="623.4" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(44 167.2 623.4)" fill="#7f9070">HASSBERGE</text><text x="141.1" y="689.5" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(56 141.1 689.5)" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">STEIGERWALD</text><text x="141.1" y="689.5" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" transform="rotate(56 141.1 689.5)" fill="#7f9070">STEIGERWALD</text><text x="65.8" y="528" text-anchor="middle" font-size="6.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">RHÖN</text><text x="65.8" y="528" text-anchor="middle" font-size="6.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="#7f9070">RHÖN</text><text x="33.5" y="236.9" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">SOLLING</text><text x="33.5" y="236.9" text-anchor="middle" font-size="6" font-weight="700" font-family="Helvetica,Arial,sans-serif" letter-spacing="1.4" fill="#7f9070">SOLLING</text><g class="sr sr3"><path d="M208.6,671.0L233.3,607.2L274.9,584.0L295.6,569.9L291.7,545.1L289.5,522.4L290.3,521.0L283.0,512.5L280.5,484.0L276.4,466.7L254.9,435.0L229.2,403.6L247.2,349.4L269.8,282.8L57.5,265.9L70.2,225.4L97.9,180.2L125.6,116.9L151.4,87.9L191.3,50.3" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M208.6,671.0L233.3,607.2L274.9,584.0L295.6,569.9L291.7,545.1L289.5,522.4L290.3,521.0L283.0,512.5L280.5,484.0L276.4,466.7L254.9,435.0L229.2,403.6L247.2,349.4L269.8,282.8L57.5,265.9L70.2,225.4L97.9,180.2L125.6,116.9L151.4,87.9L191.3,50.3" fill="none" stroke="#1F7A4A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="sr sr2"><path d="M208.6,671.0L229.2,649.1L253.6,677.0L261.3,669.5L277.9,679.7L286.6,699.1L280.5,696.0L272.8,697.3L276.2,700.1L268.9,692.6L265.1,696.0L252.3,696.7L247.2,716.4L233.2,711.6L221.5,687.8L208.6,671.0" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M208.6,671.0L229.2,649.1L253.6,677.0L261.3,669.5L277.9,679.7L286.6,699.1L280.5,696.0L272.8,697.3L276.2,700.1L268.9,692.6L265.1,696.0L252.3,696.7L247.2,716.4L233.2,711.6L221.5,687.8L208.6,671.0" fill="none" stroke="#6A4C93" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="sr sr1"><path d="M229.2,403.6L215.9,437.9L236.1,453.7L210.9,475.7L201.1,479.9L201.1,492.1L244.6,516.6L249.7,524.7L247.2,537.0L251.0,555.3L242.5,563.8L218.7,579.8L227.7,615.6L234.0,612.7L224.1,618.5L221.5,643.0L211.8,657.7L208.6,671.0" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M229.2,403.6L215.9,437.9L236.1,453.7L210.9,475.7L201.1,479.9L201.1,492.1L244.6,516.6L249.7,524.7L247.2,537.0L251.0,555.3L242.5,563.8L218.7,579.8L227.7,615.6L234.0,612.7L224.1,618.5L221.5,643.0L211.8,657.7L208.6,671.0" fill="none" stroke="#1F7A8C" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><g class="sr sr0"><path d="M191.3,50.3L151.4,87.9L125.6,116.9L136.3,177.0L139.1,188.0L138.0,195.3L138.7,202.0L152.8,202.0L164.5,220.6L172.9,240.0L172.9,255.7L192.6,275.3L211.8,285.8L231.8,292.3L241.1,297.4L239.5,311.4L229.2,337.2L231.8,371.4L229.2,403.6" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M191.3,50.3L151.4,87.9L125.6,116.9L136.3,177.0L139.1,188.0L138.0,195.3L138.7,202.0L152.8,202.0L164.5,220.6L172.9,240.0L172.9,255.7L192.6,275.3L211.8,285.8L231.8,292.3L241.1,297.4L239.5,311.4L229.2,337.2L231.8,371.4L229.2,403.6" fill="none" stroke="#E4572E" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="185.8" y="44.8" width="11" height="11" rx="2.5" fill="#15181c"/><text x="203.3" y="54" text-anchor="start" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Wolfsburg</text><text x="203.3" y="54" text-anchor="start" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="#15181c">Wolfsburg</text><circle cx="151.4" cy="87.9" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="158.9" y="91.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Braunschweig</text><text x="158.9" y="91.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Braunschweig</text><circle cx="136.3" cy="177.0" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="143.8" y="180.7" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Goslar</text><text x="143.8" y="180.7" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Goslar</text><circle cx="164.5" cy="220.6" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="172" y="224.3" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Braunlage</text><text x="172" y="224.3" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Braunlage</text><circle cx="192.6" cy="275.3" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="200.1" y="279" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Nordhausen</text><text x="200.1" y="279" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Nordhausen</text><circle cx="241.1" cy="297.4" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="233.6" y="301.1" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Kyffhäuser</text><text x="233.6" y="301.1" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Kyffhäuser</text><circle cx="57.5" cy="265.9" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="65" y="269.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Göttingen</text><text x="65" y="269.6" text-anchor="start" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Göttingen</text><circle cx="229.2" cy="403.6" r="7.5" fill="#fff" stroke="#15181c" stroke-width="3"/><text x="217.2" y="407.3" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Erfurt</text><text x="217.2" y="407.3" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="#15181c">Erfurt</text><circle cx="210.9" cy="475.7" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="203.4" y="479.4" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Ilmenau</text><text x="203.4" y="479.4" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Ilmenau</text><circle cx="280.5" cy="484.0" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="273" y="487.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Saalfeld</text><text x="273" y="487.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Saalfeld</text><circle cx="251.0" cy="555.3" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="243.5" y="559" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Sonneberg</text><text x="243.5" y="559" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Sonneberg</text><circle cx="218.7" cy="579.8" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="211.2" y="583.5" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Coburg</text><text x="211.2" y="583.5" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Coburg</text><circle cx="274.9" cy="584.0" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="267.4" y="587.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Kronach</text><text x="267.4" y="587.7" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Kronach</text><circle cx="233.3" cy="607.2" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="225.8" y="610.9" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Lichtenfels</text><text x="225.8" y="610.9" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Lichtenfels</text><circle cx="208.6" cy="671.0" r="7.5" fill="#fff" stroke="#15181c" stroke-width="3"/><text x="196.6" y="674.7" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Bamberg</text><text x="196.6" y="674.7" text-anchor="end" font-size="12.5" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="#15181c">Bamberg</text><circle cx="286.6" cy="699.1" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="279.1" y="702.8" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Pottenstein</text><text x="279.1" y="702.8" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Pottenstein</text><circle cx="233.2" cy="711.6" r="3.1" fill="#fff" stroke="#6f6a5d" stroke-width="1.8"/><text x="225.7" y="715.3" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="none" stroke="#f4f1e9" stroke-width="3.2" stroke-linejoin="round">Forchheim</text><text x="225.7" y="715.3" text-anchor="end" font-size="10.2" font-weight="600" font-family="Helvetica,Arial,sans-serif" fill="#4d5560">Forchheim</text><rect x="11" y="723" width="161.9" height="24" rx="5" fill="#fff" opacity=".82"/><line x1="16" y1="738" x2="125.9" y2="738" stroke="#5f5a50" stroke-width="1.8"/><line x1="16" y1="734.5" x2="16" y2="741.5" stroke="#5f5a50" stroke-width="1.8"/><line x1="125.9" y1="734.5" x2="125.9" y2="741.5" stroke="#5f5a50" stroke-width="1.8"/><text x="132.9" y="741.5" font-size="9.5" fill="#5f5a50" font-family="Helvetica,Arial,sans-serif">50 km</text><g transform="translate(330,26)"><circle cx="0" cy="0" r="13" fill="#fff" opacity=".85"/><path d="M0,-9 L4,4 L0,1.4 L-4,4 Z" fill="#5f5a50"/><text x="0" y="11" text-anchor="middle" font-size="7.5" font-weight="700" fill="#5f5a50" font-family="Helvetica,Arial,sans-serif">N</text></g></g><rect x=".5" y=".5" width="355" height="759" rx="10" fill="none" stroke="#e0dcd2"/></svg></div>
+    <div id="map"></div>
     <div class="touchhint">Karte mit zwei Fingern bewegen</div>
   </div>
   <div class="maphint">
@@ -250,7 +243,7 @@
   <div class="mapstat" id="mapstat">Übersichtskarte mit allen vier Etappen · Höhen: Torfhaus 800 m, Kyffhäuser 439 m, Rennsteig bis 835 m.</div>
 </div>
 
-<!-- ============================ TAGE ============================ -->
+<!-- ============================ DONNERSTAG ============================ -->
 <div class="day" id="t0">
   <div class="hd h0">
     <div class="dt">Donnerstag · 20. August</div>
@@ -259,8 +252,8 @@
   </div>
   <div class="bd">
     <div class="focus"><b>Schwerpunkt</b>Zielstrebig, aber auf den guten Straßen. Zwei Kurvenblöcke: Okertalsperre hoch nach Altenau, dann die B4 über Torfhaus und Hohegeiß nach Nordhausen. Dazwischen kein Umweg.</div>
-    <p>Die ersten 100 km sind Autobahn – die opfern wir bewusst, damit im Harz Zeit bleibt. Ab Goslar wird es ernst: Die <b>B498 entlang der Okertalsperre</b> ist eine der besten Straßen Norddeutschlands, eng am Wasser, Kurve an Kurve. Über Altenau und <b>Torfhaus</b> (800 m, höchster Punkt des Tages) nach Braunlage, dann auf der B4 südwärts über <b>Hohegeiß</b> (600 m), einen der höchstgelegenen Orte Norddeutschlands.</p>
-    <p>Ab Nordhausen rollt es flott nach Kelbra, dann kommt der zweite Höhepunkt: die <b>Kyffhäuserstraße</b> über den Kamm nach Bad Frankenhausen. Kurze, enge Serpentinen, oben der Blick über die Goldene Aue. Fotostopp am Denkmal, aber kurz halten – ab Kindelbrück nehmen wir die A71.</p>
+    <p>Die ersten 100 km sind Autobahn – die opfern wir bewusst, damit im Harz Zeit bleibt. Ab Goslar wird es ernst: Die <b>B498 entlang der Okertalsperre</b> ist eine der besten Straßen Norddeutschlands, eng am Wasser, Kurve an Kurve. Über Altenau und <b>Torfhaus</b> (800 m, höchster Punkt des Tages) nach Braunlage, dann auf der B4 südwärts über <b>Hohegeiß</b> (600 m).</p>
+    <p>Ab Nordhausen rollt es flott nach Kelbra, dann kommt der zweite Höhepunkt: die <b>Kyffhäuserstraße</b> über den Kamm nach Bad Frankenhausen. Kurze, enge Serpentinen, oben der Blick über die Goldene Aue. Ab Kindelbrück nehmen wir die A71.</p>
     <div class="prof"><div class="pt">Höhenprofil</div><svg viewBox="0 0 1000 230" width="1000" height="230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Höhenprofil"><defs><linearGradient id="pg0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4572E" stop-opacity=".34"/><stop offset="1" stop-color="#E4572E" stop-opacity=".03"/></linearGradient></defs><line x1="74" x2="988" y1="146.0" y2="146.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="150.0" text-anchor="end" font-size="12" fill="#8b929b">0</text><line x1="74" x2="988" y1="104.7" y2="104.7" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="108.7" text-anchor="end" font-size="12" fill="#8b929b">300</text><line x1="74" x2="988" y1="63.3" y2="63.3" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="67.3" text-anchor="end" font-size="12" fill="#8b929b">600</text><line x1="74" x2="988" y1="22.0" y2="22.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="26.0" text-anchor="end" font-size="12" fill="#8b929b">900</text><path d="M74.0,137.3 C85.7,137.2 120.9,140.8 144.3,136.4 C167.7,131.9 191.2,118.9 214.6,110.9 C238.1,102.8 261.5,92.4 284.9,88.1 C308.4,83.9 331.8,94.1 355.2,85.4 C378.7,76.7 402.1,38.6 425.5,35.8 C449.0,32.9 472.4,63.6 495.8,68.2 C519.3,72.7 542.7,57.0 566.2,63.3 C589.6,69.6 613.0,96.6 636.5,106.0 C659.9,115.5 683.3,116.6 706.8,119.8 C730.2,123.0 753.6,131.1 777.1,125.3 C800.5,119.6 823.9,85.4 847.4,85.5 C870.8,85.6 894.3,120.4 917.7,126.0 C941.1,131.6 976.3,120.3 988.0,119.1 L988.0,146.0 L74,146.0 Z" fill="url(#pg0)"/><path d="M74.0,137.3 C85.7,137.2 120.9,140.8 144.3,136.4 C167.7,131.9 191.2,118.9 214.6,110.9 C238.1,102.8 261.5,92.4 284.9,88.1 C308.4,83.9 331.8,94.1 355.2,85.4 C378.7,76.7 402.1,38.6 425.5,35.8 C449.0,32.9 472.4,63.6 495.8,68.2 C519.3,72.7 542.7,57.0 566.2,63.3 C589.6,69.6 613.0,96.6 636.5,106.0 C659.9,115.5 683.3,116.6 706.8,119.8 C730.2,123.0 753.6,131.1 777.1,125.3 C800.5,119.6 823.9,85.4 847.4,85.5 C870.8,85.6 894.3,120.4 917.7,126.0 C941.1,131.6 976.3,120.3 988.0,119.1" fill="none" stroke="#E4572E" stroke-width="2.6" stroke-linejoin="round"/><circle cx="74.0" cy="137.3" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="74.0" y1="146.0" x2="74.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="74.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 74.0,178)">Wolfsburg</text><circle cx="144.3" cy="136.4" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="144.3" y1="146.0" x2="144.3" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="144.3" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 144.3,178)">Braunschweig</text><circle cx="214.6" cy="110.9" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="214.6" y1="146.0" x2="214.6" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="214.6" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 214.6,178)">Goslar</text><circle cx="284.9" cy="88.1" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="284.9" y1="146.0" x2="284.9" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="284.9" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 284.9,178)">Okertalsperre</text><circle cx="355.2" cy="85.4" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="355.2" y1="146.0" x2="355.2" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="355.2" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 355.2,178)">Altenau</text><circle cx="425.5" cy="35.8" r="4" fill="#E4572E" stroke="#E4572E" stroke-width="1.8"/><text x="425.5" y="25.8" text-anchor="middle" font-size="12" font-weight="700" fill="#E4572E">800</text><line x1="425.5" y1="146.0" x2="425.5" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="425.5" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 425.5,178)">Torfhaus</text><circle cx="495.8" cy="68.2" r="4" fill="#E4572E" stroke="#E4572E" stroke-width="1.8"/><text x="495.8" y="58.2" text-anchor="middle" font-size="12" font-weight="700" fill="#E4572E">565</text><line x1="495.8" y1="146.0" x2="495.8" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="495.8" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 495.8,178)">Braunlage</text><circle cx="566.2" cy="63.3" r="4" fill="#E4572E" stroke="#E4572E" stroke-width="1.8"/><text x="566.2" y="53.3" text-anchor="middle" font-size="12" font-weight="700" fill="#E4572E">600</text><line x1="566.2" y1="146.0" x2="566.2" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="566.2" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 566.2,178)">Hohegeiß</text><circle cx="636.5" cy="106.0" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="636.5" y1="146.0" x2="636.5" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="636.5" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 636.5,178)">Ellrich</text><circle cx="706.8" cy="119.8" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="706.8" y1="146.0" x2="706.8" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="706.8" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 706.8,178)">Nordhausen</text><circle cx="777.1" cy="125.3" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="777.1" y1="146.0" x2="777.1" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="777.1" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 777.1,178)">Kelbra</text><circle cx="847.4" cy="85.5" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="847.4" y1="146.0" x2="847.4" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="847.4" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 847.4,178)">Kyffhäuser</text><circle cx="917.7" cy="126.0" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="917.7" y1="146.0" x2="917.7" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="917.7" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 917.7,178)">Bad Frankenh.</text><circle cx="988.0" cy="119.1" r="2.6" fill="#ffffff" stroke="#E4572E" stroke-width="1.8"/><line x1="988.0" y1="146.0" x2="988.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="988.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 988.0,178)">Erfurt</text><text x="3" y="14" font-size="12" fill="#8b929b">m ü. NN</text></svg></div>
     <ul class="sched">
       <li><span class="t">15:00</span><span>Abfahrt Wolfsburg, A39/A36</span></li>
@@ -273,7 +266,7 @@
     </ul>
     <div class="warn amber" style="margin:0 0 14px;font-size:13.5px;box-shadow:none">
       <b class="t">Zeit-Check in Braunlage</b>
-      Sonnenuntergang ist in Erfurt um 20:27. Wenn wir um 17:45 noch nicht in Braunlage sind: Kyffhäuser streichen, ab Nordhausen A38/A71 direkt nach Erfurt. Spart 40 Minuten.
+      Sonnenuntergang in Erfurt: 20:27. Wenn wir um 17:45 noch nicht in Braunlage sind, fällt der Kyffhäuser weg – ab Nordhausen dann A38/A71 direkt nach Erfurt, das spart 40 Minuten. Bei nassem Asphalt im Harz lieber früher entscheiden.
     </div>
     <div class="wplabel">calimoto-Wegpunkte</div>
     <div class="wp">Wolfsburg → Goslar → Okertalsperre → Altenau → Torfhaus → Braunlage → Hohegeiß → Ellrich → Nordhausen → Kelbra → Kyffhäuserdenkmal → Bad Frankenhausen → Kindelbrück → Erfurt</div>
@@ -282,56 +275,57 @@
       <button type="button" class="zoomday" data-d="0">🗺 Auf der Karte zeigen</button>
     </div>
     <div class="eve">
-      <b class="t">🌙 Donnerstagabend in Erfurt</b>
+      <b class="t">Donnerstagabend in Erfurt</b>
       <ul>
-        <li><b>DomStufen-Festspiele</b> direkt vor der Wohnungstür – „Jesus Christ Superstar“ auf den 70 Domstufen. Karten kurzfristig meist knapp, die Kulisse und die Stimmung auf dem Platz gibt's umsonst.</li>
-        <li><b>Essen &amp; Bier:</b> Michaelisstraße („Lateinisches Viertel“) und Andreasviertel, beides 5 Minuten zu Fuß. Die Hausbrauerei Zum Goldenen Schwan liegt mittendrin.</li>
-        <li><b>Nachtisch mit Aussicht:</b> hoch auf den Petersberg, von der Zitadelle über den beleuchteten Dom schauen.</li>
-        <li>Im August ist Erfurt abends voll – <b>Tisch für 5 vorab reservieren</b>.</li>
+        <li>Check-in ab 16:00, schlüssellos. Die Codes kommen am Anreisetag automatisch per Mail und SMS – späte Ankunft ist also kein Problem.</li>
+        <li><b>DomStufen-Festspiele</b> direkt vor der Haustür: „Jesus Christ Superstar“ auf den 70 Domstufen, noch bis 30.08. Karten sind kurzfristig meist weg, die Kulisse auf dem Platz gibt es umsonst.</li>
+        <li><b>Essen und Bier:</b> Michaelisstraße („Lateinisches Viertel“) und Andreasviertel, beides fünf Minuten zu Fuß. Die Hausbrauerei Zum Goldenen Schwan liegt mittendrin. Um 20:30 ohne Reservierung wird es eng.</li>
+        <li>Wer noch Luft hat: hoch auf den Petersberg, von der Zitadelle über den beleuchteten Dom schauen.</li>
       </ul>
     </div>
   </div>
 </div>
 
+<!-- ============================ FREITAG ============================ -->
 <div class="day" id="t1">
   <div class="hd h1">
     <div class="dt">Freitag · 21. August</div>
     <div class="ti">Erfurt → Rennsteig → Coburger Land → Bamberg</div>
-    <div class="km"><span class="kmv" data-k="1">~245 km</span> · ca. 5:00 h reine Fahrzeit</div>
+    <div class="km"><span class="kmv" data-k="1">~250 km</span> · ca. 5:00 h reine Fahrzeit</div>
   </div>
   <div class="bd">
     <div class="focus"><b>Schwerpunkt</b>Der reine Kurventag. Erst der Thüringer-Wald-Kamm mit dem Rennsteig-Abschnitt, dann der weiche Ausklang über den Obermain mit Staffelberg und Vierzehnheiligen.</div>
     <p>Ab Arnstadt steigt die Straße in den <b>Thüringer Wald</b>. Der Abschnitt <b>Ilmenau – Stützerbach – Schmiedefeld – Neuhaus am Rennweg</b> ist das Herzstück: dicht bewaldet, eng, technisch, Sichtweite oft nur bis zur nächsten Kurve. Über Lauscha und Steinach, die alten Glasbläserorte, nach Sonneberg und über die alte Grenze ins <b>Coburger Land</b>.</p>
-    <p>Danach dreht der Charakter komplett: offene, weite Kurven über Bad Staffelstein mit der <b>Basilika Vierzehnheiligen</b> und dem <b>Staffelberg</b> – der Klassiker für die Mittagspause mit Blick ins Maintal. Von dort rollt es gemütlich am Main entlang nach Bamberg.</p>
+    <p>Danach dreht der Charakter komplett: offene, weite Kurven über Bad Staffelstein mit der <b>Basilika Vierzehnheiligen</b> und dem <b>Staffelberg</b> – der Klassiker für die Mittagspause mit Blick ins Maintal. Von dort rollt es am Main entlang nach Bamberg.</p>
     <div class="prof"><div class="pt">Höhenprofil</div><svg viewBox="0 0 1000 230" width="1000" height="230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Höhenprofil"><defs><linearGradient id="pg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F7A8C" stop-opacity=".34"/><stop offset="1" stop-color="#1F7A8C" stop-opacity=".03"/></linearGradient></defs><line x1="74" x2="988" y1="146.0" y2="146.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="150.0" text-anchor="end" font-size="12" fill="#8b929b">0</text><line x1="74" x2="988" y1="104.7" y2="104.7" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="108.7" text-anchor="end" font-size="12" fill="#8b929b">300</text><line x1="74" x2="988" y1="63.3" y2="63.3" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="67.3" text-anchor="end" font-size="12" fill="#8b929b">600</text><line x1="74" x2="988" y1="22.0" y2="22.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="26.0" text-anchor="end" font-size="12" fill="#8b929b">900</text><path d="M74.0,119.1 C87.8,117.1 129.4,113.7 157.1,106.7 C184.8,99.7 212.5,85.3 240.2,77.1 C267.9,69.0 295.6,63.6 323.3,57.8 C351.0,52.1 378.7,47.1 406.4,42.7 C434.1,38.2 461.8,28.0 489.5,31.0 C517.2,33.9 544.8,49.8 572.5,60.6 C600.2,71.4 627.9,88.2 655.6,95.7 C683.3,103.2 711.0,109.4 738.7,105.4 C766.4,101.3 794.1,71.0 821.8,71.6 C849.5,72.2 877.2,101.9 904.9,108.8 C932.6,115.7 974.2,112.2 988.0,112.9 L988.0,146.0 L74,146.0 Z" fill="url(#pg1)"/><path d="M74.0,119.1 C87.8,117.1 129.4,113.7 157.1,106.7 C184.8,99.7 212.5,85.3 240.2,77.1 C267.9,69.0 295.6,63.6 323.3,57.8 C351.0,52.1 378.7,47.1 406.4,42.7 C434.1,38.2 461.8,28.0 489.5,31.0 C517.2,33.9 544.8,49.8 572.5,60.6 C600.2,71.4 627.9,88.2 655.6,95.7 C683.3,103.2 711.0,109.4 738.7,105.4 C766.4,101.3 794.1,71.0 821.8,71.6 C849.5,72.2 877.2,101.9 904.9,108.8 C932.6,115.7 974.2,112.2 988.0,112.9" fill="none" stroke="#1F7A8C" stroke-width="2.6" stroke-linejoin="round"/><circle cx="74.0" cy="119.1" r="2.6" fill="#ffffff" stroke="#1F7A8C" stroke-width="1.8"/><line x1="74.0" y1="146.0" x2="74.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="74.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 74.0,178)">Erfurt</text><circle cx="157.1" cy="106.7" r="2.6" fill="#ffffff" stroke="#1F7A8C" stroke-width="1.8"/><line x1="157.1" y1="146.0" x2="157.1" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="157.1" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 157.1,178)">Arnstadt</text><circle cx="240.2" cy="77.1" r="4" fill="#1F7A8C" stroke="#1F7A8C" stroke-width="1.8"/><text x="240.2" y="67.1" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A8C">500</text><line x1="240.2" y1="146.0" x2="240.2" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="240.2" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 240.2,178)">Ilmenau</text><circle cx="323.3" cy="57.8" r="4" fill="#1F7A8C" stroke="#1F7A8C" stroke-width="1.8"/><text x="323.3" y="47.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A8C">640</text><line x1="323.3" y1="146.0" x2="323.3" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="323.3" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 323.3,178)">Stützerbach</text><circle cx="406.4" cy="42.7" r="4" fill="#1F7A8C" stroke="#1F7A8C" stroke-width="1.8"/><text x="406.4" y="32.7" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A8C">750</text><line x1="406.4" y1="146.0" x2="406.4" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="406.4" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 406.4,178)">Schmiedefeld</text><circle cx="489.5" cy="31.0" r="4" fill="#1F7A8C" stroke="#1F7A8C" stroke-width="1.8"/><text x="489.5" y="21.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A8C">835</text><line x1="489.5" y1="146.0" x2="489.5" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="489.5" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 489.5,178)">Neuhaus</text><circle cx="572.5" cy="60.6" r="4" fill="#1F7A8C" stroke="#1F7A8C" stroke-width="1.8"/><text x="572.5" y="50.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A8C">620</text><line x1="572.5" y1="146.0" x2="572.5" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="572.5" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 572.5,178)">Lauscha</text><circle cx="655.6" cy="95.7" r="2.6" fill="#ffffff" stroke="#1F7A8C" stroke-width="1.8"/><line x1="655.6" y1="146.0" x2="655.6" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="655.6" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 655.6,178)">Sonneberg</text><circle cx="738.7" cy="105.4" r="2.6" fill="#ffffff" stroke="#1F7A8C" stroke-width="1.8"/><line x1="738.7" y1="146.0" x2="738.7" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="738.7" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 738.7,178)">Coburg</text><circle cx="821.8" cy="71.6" r="4" fill="#1F7A8C" stroke="#1F7A8C" stroke-width="1.8"/><text x="821.8" y="61.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A8C">540</text><line x1="821.8" y1="146.0" x2="821.8" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="821.8" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 821.8,178)">Staffelberg</text><circle cx="904.9" cy="108.8" r="2.6" fill="#ffffff" stroke="#1F7A8C" stroke-width="1.8"/><line x1="904.9" y1="146.0" x2="904.9" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="904.9" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 904.9,178)">Bad Staffelst.</text><circle cx="988.0" cy="112.9" r="2.6" fill="#ffffff" stroke="#1F7A8C" stroke-width="1.8"/><line x1="988.0" y1="146.0" x2="988.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="988.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 988.0,178)">Bamberg</text><text x="3" y="14" font-size="12" fill="#8b929b">m ü. NN</text></svg></div>
     <ul class="sched">
-      <li><span class="t">09:30</span><span>Abfahrt Erfurt</span></li>
+      <li><span class="t">09:30</span><span>Abfahrt Erfurt, Check-out bis 11:00</span></li>
       <li><span class="t">10:30</span><span>Ilmenau – Beginn Rennsteig-Abschnitt</span></li>
       <li><span class="t">12:00</span><span>Sonneberg / Neustadt b. Coburg</span></li>
       <li><span class="t">13:00</span><span><b>Vierzehnheiligen – Mittagspause</b></span></li>
-      <li><span class="t">15:30</span><span>Ankunft Bamberg</span></li>
-      <li><span class="t">16:00</span><span><b>Maschinen wegstellen, Gepäck zu Fuß in den Sand</b></span></li>
+      <li><span class="t">15:30</span><span>Wetzelstraße, Maschinen in den Hof – Check-in ab 15:00</span></li>
+      <li><span class="t">17:15</span><span>Zu Fuß los, 20 Minuten in die Altstadt</span></li>
+      <li><span class="t">17:45</span><span><b>Festzug zum Kirchweihbaum</b> durch die Sandstraße</span></li>
     </ul>
-    <p style="font-size:13.5px;color:var(--mut)">Bewusst früh geplant: Freitag läuft die Sandkerwa schon, die Anfahrt zur Unterkunft braucht Zeit und Nerven. Lieber eine Stunde Puffer als im Gedränge nach einem Stellplatz suchen.</p>
     <div class="wplabel">calimoto-Wegpunkte</div>
-    <div class="wp">Erfurt → Arnstadt → Ilmenau → Stützerbach → Schmiedefeld am Rennsteig → Neuhaus am Rennweg → Lauscha → Steinach → Sonneberg → Neustadt bei Coburg → Coburg → Bad Staffelstein → Vierzehnheiligen → Ebensfeld → Bamberg</div>
+    <div class="wp">Erfurt → Arnstadt → Ilmenau → Stützerbach → Schmiedefeld am Rennsteig → Neuhaus am Rennweg → Lauscha → Steinach → Sonneberg → Neustadt bei Coburg → Coburg → Bad Staffelstein → Vierzehnheiligen → Ebensfeld → Bamberg, Wetzelstraße</div>
     <div class="acts">
-      <a class="pri" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Domplatz%2011%2C%2099084%20Erfurt&destination=Obere%20Sandstra%C3%9Fe%202b%2C%2096049%20Bamberg&waypoints=Arnstadt%7CIlmenau%7CSt%C3%BCtzerbach%7CNeuhaus%20am%20Rennweg%7CLauscha%7CSonneberg%7CCoburg%7CBad%20Staffelstein">↗ In Google Maps öffnen</a>
+      <a class="pri" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Domplatz%2011%2C%2099084%20Erfurt&destination=Wetzelstra%C3%9Fe%2013%2C%2096047%20Bamberg&waypoints=Arnstadt%7CIlmenau%7CSt%C3%BCtzerbach%7CNeuhaus%20am%20Rennweg%7CLauscha%7CSonneberg%7CCoburg%7CBad%20Staffelstein">↗ In Google Maps öffnen</a>
       <button type="button" class="zoomday" data-d="1">🗺 Auf der Karte zeigen</button>
     </div>
     <div class="eve">
-      <b class="t">🌙 Freitagabend in Bamberg – Sandkerwa, Tag 2</b>
+      <b class="t">Freitagabend · Sandkerwa Tag 2</b>
       <ul>
-        <li>Wir wohnen <b>in</b> der Festmeile. Vor der Tür: Bierstände, Livebühnen, die ganze Obere Sandstraße dicht an dicht.</li>
-        <li><b>Schlenkerla</b> (Rauchbier, Dominikanerstraße) und <b>Klosterbräu</b> je zwei Minuten entfernt – Frankens Bierkultur im Original.</li>
-        <li><b>Klein-Venedig</b> an der Regnitz, drei Minuten, abends beleuchtet.</li>
-        <li>Fischerstechen und Abschlussfeuerwerk sind die Höhepunkte – genaue Tage im Programm auf sandkerwa.de.</li>
-        <li>200.000 Besucher über fünf Tage: <b>Treffpunkt vorher ausmachen</b>, im Gedränge findet man sich sonst nicht wieder.</li>
+        <li><b>17:45 Festzug zum Kirchweihbaum</b> – vom Markusplatz über die Markusbrücke durch die Untere und Obere Sandstraße zum Leinritt. Wer gegen 17:15 losgeht, steht rechtzeitig an der Strecke.</li>
+        <li><b>18:00 Aufstellung des Kirchweihbaums</b> vor Klein-Venedig, mit den Bauhandwerkerzünften aus Gaustadt, Hallstadt und Stegaurach. Danach die Proklamation des Sandschützenkönigs.</li>
+        <li>Danach die Sandstraße rauf und runter. <b>Schlenkerla</b> (Rauchbier, Dominikanerstraße) und <b>Klosterbräu</b> liegen mittendrin.</li>
+        <li><b>Festabzeichen</b> gibt es an der Geschäftsstelle im Kontor 4, Schrottenberggasse 2, täglich 11–18 Uhr.</li>
       </ul>
     </div>
   </div>
 </div>
 
+<!-- ============================ SAMSTAG ============================ -->
 <div class="day" id="t2">
   <div class="hd h2">
     <div class="dt">Samstag · 22. August</div>
@@ -341,11 +335,11 @@
   <div class="bd">
     <div class="focus"><b>Schwerpunkt</b>Die kurvigsten Kilometer der Tour. Karstlandschaft statt Berge: senkrechte Dolomitfelsen, enge Talstraßen an der Wiesent, auf jedem zweiten Felsen eine Burg.</div>
     <p>Kein Gepäck, keine Etappe – heute geht es nur ums Fahren. Über Scheßlitz und Heiligenstadt nach <b>Aufseß</b>, dem Ort mit der weltweit höchsten Brauereidichte pro Einwohner. Weiter über Waischenfeld nach <b>Pottenstein</b> mit der Teufelshöhle, hinüber nach <b>Gößweinstein</b> – Basilika und Blick ins Wiesenttal sind der Fotostopp des Tages.</p>
-    <p>Zurück geht es durch das <b>Felsendorf Tüchersfeld</b> und das Wiesenttal über Muggendorf, Streitberg und Ebermannstadt. Wer noch Lust hat, nimmt den Abstecher zum <b>Walberla</b> bei Leutenbach mit – der Hausberg der Franken, weiter Blick über die Ebene.</p>
+    <p>Zurück geht es durch das <b>Felsendorf Tüchersfeld</b> und das Wiesenttal über Muggendorf, Streitberg und Ebermannstadt. Wer noch Lust hat, nimmt den Abstecher zum <b>Walberla</b> bei Leutenbach mit.</p>
     <div class="prof"><div class="pt">Höhenprofil</div><svg viewBox="0 0 1000 230" width="1000" height="230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Höhenprofil"><defs><linearGradient id="pg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A4C93" stop-opacity=".34"/><stop offset="1" stop-color="#6A4C93" stop-opacity=".03"/></linearGradient></defs><line x1="74" x2="988" y1="146.0" y2="146.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="150.0" text-anchor="end" font-size="12" fill="#8b929b">0</text><line x1="74" x2="988" y1="104.7" y2="104.7" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="108.7" text-anchor="end" font-size="12" fill="#8b929b">300</text><line x1="74" x2="988" y1="63.3" y2="63.3" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="67.3" text-anchor="end" font-size="12" fill="#8b929b">600</text><line x1="74" x2="988" y1="22.0" y2="22.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="26.0" text-anchor="end" font-size="12" fill="#8b929b">900</text><path d="M74.0,112.9 C86.7,111.6 124.8,106.7 150.2,104.7 C175.6,102.6 200.9,102.6 226.3,100.5 C251.7,98.5 277.1,92.7 302.5,92.3 C327.9,91.8 353.3,97.3 378.7,97.8 C404.1,98.2 429.4,95.0 454.8,95.0 C480.2,95.0 505.6,100.5 531.0,97.8 C556.4,95.0 581.8,77.3 607.2,78.5 C632.6,79.6 657.9,100.1 683.3,104.7 C708.7,109.3 734.1,110.9 759.5,106.0 C784.9,101.2 810.3,75.2 835.7,75.7 C861.1,76.3 886.4,103.3 911.8,109.5 C937.2,115.7 975.3,112.4 988.0,112.9 L988.0,146.0 L74,146.0 Z" fill="url(#pg2)"/><path d="M74.0,112.9 C86.7,111.6 124.8,106.7 150.2,104.7 C175.6,102.6 200.9,102.6 226.3,100.5 C251.7,98.5 277.1,92.7 302.5,92.3 C327.9,91.8 353.3,97.3 378.7,97.8 C404.1,98.2 429.4,95.0 454.8,95.0 C480.2,95.0 505.6,100.5 531.0,97.8 C556.4,95.0 581.8,77.3 607.2,78.5 C632.6,79.6 657.9,100.1 683.3,104.7 C708.7,109.3 734.1,110.9 759.5,106.0 C784.9,101.2 810.3,75.2 835.7,75.7 C861.1,76.3 886.4,103.3 911.8,109.5 C937.2,115.7 975.3,112.4 988.0,112.9" fill="none" stroke="#6A4C93" stroke-width="2.6" stroke-linejoin="round"/><circle cx="74.0" cy="112.9" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="74.0" y1="146.0" x2="74.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="74.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 74.0,178)">Bamberg</text><circle cx="150.2" cy="104.7" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="150.2" y1="146.0" x2="150.2" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="150.2" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 150.2,178)">Scheßlitz</text><circle cx="226.3" cy="100.5" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="226.3" y1="146.0" x2="226.3" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="226.3" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 226.3,178)">Heiligenstadt</text><circle cx="302.5" cy="92.3" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="302.5" y1="146.0" x2="302.5" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="302.5" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 302.5,178)">Aufseß</text><circle cx="378.7" cy="97.8" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="378.7" y1="146.0" x2="378.7" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="378.7" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 378.7,178)">Waischenfeld</text><circle cx="454.8" cy="95.0" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="454.8" y1="146.0" x2="454.8" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="454.8" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 454.8,178)">Pottenstein</text><circle cx="531.0" cy="97.8" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="531.0" y1="146.0" x2="531.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="531.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 531.0,178)">Tüchersfeld</text><circle cx="607.2" cy="78.5" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="607.2" y1="146.0" x2="607.2" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="607.2" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 607.2,178)">Gößweinstein</text><circle cx="683.3" cy="104.7" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="683.3" y1="146.0" x2="683.3" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="683.3" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 683.3,178)">Muggendorf</text><circle cx="759.5" cy="106.0" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="759.5" y1="146.0" x2="759.5" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="759.5" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 759.5,178)">Ebermannstadt</text><circle cx="835.7" cy="75.7" r="4" fill="#6A4C93" stroke="#6A4C93" stroke-width="1.8"/><text x="835.7" y="65.7" text-anchor="middle" font-size="12" font-weight="700" fill="#6A4C93">510</text><line x1="835.7" y1="146.0" x2="835.7" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="835.7" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 835.7,178)">Walberla</text><circle cx="911.8" cy="109.5" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="911.8" y1="146.0" x2="911.8" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="911.8" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 911.8,178)">Forchheim</text><circle cx="988.0" cy="112.9" r="2.6" fill="#ffffff" stroke="#6A4C93" stroke-width="1.8"/><line x1="988.0" y1="146.0" x2="988.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="988.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 988.0,178)">Bamberg</text><text x="3" y="14" font-size="12" fill="#8b929b">m ü. NN</text></svg></div>
     <div class="warn amber" style="margin:0 0 14px;font-size:13.5px;box-shadow:none">
-      <b class="t">Früh los – wirklich</b>
-      Ein sonniger Samstag im August bringt Ausflugsverkehr ohne Ende nach Pottenstein und Gößweinstein. Um 9:00 los heißt: die schönsten zwei Stunden gehören uns. Und wir sind gegen 16:30 zurück, rechtzeitig zum Hauptabend der Kerwa.
+      <b class="t">Früh los</b>
+      Ein trockener Samstag im August bringt Ausflugsverkehr nach Pottenstein und Gößweinstein. Um 9:00 los heißt: die schönsten zwei Stunden gehören uns – und wir sind gegen 16:30 zurück, mit Luft vor dem Hauptabend.
     </div>
     <ul class="sched">
       <li><span class="t">09:00</span><span>Abfahrt Bamberg</span></li>
@@ -359,21 +353,22 @@
     <div class="wplabel">calimoto-Wegpunkte · Rundtour ab/an Bamberg</div>
     <div class="wp">Bamberg → Scheßlitz → Heiligenstadt in Oberfranken → Aufseß → Waischenfeld → Pottenstein → Tüchersfeld → Behringersmühle → Gößweinstein → Muggendorf → Streitberg → Ebermannstadt → Leutenbach → Forchheim → Hirschaid → Bamberg</div>
     <div class="acts">
-      <a class="pri" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Bamberg&destination=Bamberg&waypoints=Sche%C3%9Flitz%7CHeiligenstadt%20in%20Oberfranken%7CAufse%C3%9F%7CWaischenfeld%7CPottenstein%7CG%C3%B6%C3%9Fweinstein%7CMuggendorf%7CEbermannstadt%7CForchheim">↗ In Google Maps öffnen</a>
+      <a class="pri" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Wetzelstra%C3%9Fe%2013%2C%2096047%20Bamberg&destination=Wetzelstra%C3%9Fe%2013%2C%2096047%20Bamberg&waypoints=Sche%C3%9Flitz%7CHeiligenstadt%20in%20Oberfranken%7CAufse%C3%9F%7CWaischenfeld%7CPottenstein%7CG%C3%B6%C3%9Fweinstein%7CMuggendorf%7CEbermannstadt%7CForchheim">↗ In Google Maps öffnen</a>
       <button type="button" class="zoomday" data-d="2">🗺 Auf der Karte zeigen</button>
     </div>
     <div class="eve">
-      <b class="t">🌙 Samstagabend – Hauptabend der Sandkerwa</b>
+      <b class="t">Samstagabend · der Hauptabend</b>
       <ul>
-        <li>Der volle Abend der Woche. Maschinen bleiben stehen, ab hier zu Fuß.</li>
-        <li><b>Bierkeller am Stephansberg</b> – Spezial-Keller, Wilde Rose, Greifenklau. Von oben schaut man über die ganze Altstadt. 15 Minuten bergauf, jeden Schritt wert.</li>
-        <li>Danach runter in den Sand: Livemusik, Bierstände, Klein-Venedig.</li>
-        <li>Wer früher genug hat – die Wohnung ist mitten drin, der Weg ist kurz.</li>
+        <li>Tagsüber läuft die Kerwa ohne uns: 14:00 Schüler- und Jugendfischerstechen mit Entenrennen auf der Regnitz, 15:00 Orgelkonzert im Kaiserdom. Wer darauf Wert legt, müsste die Runde um zwei Stunden kürzen.</li>
+        <li>Abends ist ohnehin der volle Tag der Woche – Livemusik auf allen Bühnen, Vergnügungspark am Markusplatz.</li>
+        <li>Vorher lohnt der Umweg über die <b>Bierkeller am Stephansberg</b> – Spezial-Keller, Wilde Rose, Greifenklau. Von oben schaut man über die ganze Altstadt.</li>
+        <li>Rückweg zur Wohnung: 20 Minuten zu Fuß, Nachtbus bis 1:30 ab ZOB oder Taxi.</li>
       </ul>
     </div>
   </div>
 </div>
 
+<!-- ============================ SONNTAG ============================ -->
 <div class="day" id="t3">
   <div class="hd h3">
     <div class="dt">Sonntag · 23. August</div>
@@ -383,10 +378,10 @@
   <div class="bd">
     <div class="focus"><b>Schwerpunkt</b>Kein reines Autobahnband zum Schluss. Die ersten 175 km gehen durch den Frankenwald – neues Revier – erst ab Erfurt wird durchgezogen.</div>
     <p>Über Lichtenfels nach <b>Kronach</b> mit der Festung Rosenberg, dann hinauf in den <b>Frankenwald</b>: Steinwiesen, Wallenfels, Ludwigsstadt. Bei <b>Lauenstein</b> steht die Burg direkt über der Straße – der letzte gute Fotostopp der Tour. Über Probstzella und das Loquitztal nach Saalfeld, ab Rudolstadt auf die A71.</p>
-    <p>Ab Erfurt sind es noch 250 km durchgezogene Autobahn über Sangerhausen, Göttingen und Seesen. Zwei Pausen, dann ist Wolfsburg dran.</p>
+    <p>Ab Erfurt sind es noch 250 km durchgezogene Autobahn über Sangerhausen, Göttingen und Seesen.</p>
     <div class="prof"><div class="pt">Höhenprofil bis Erfurt</div><svg viewBox="0 0 1000 230" width="1000" height="230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Höhenprofil"><defs><linearGradient id="pg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F7A4A" stop-opacity=".34"/><stop offset="1" stop-color="#1F7A4A" stop-opacity=".03"/></linearGradient></defs><line x1="74" x2="988" y1="146.0" y2="146.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="150.0" text-anchor="end" font-size="12" fill="#8b929b">0</text><line x1="74" x2="988" y1="104.7" y2="104.7" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="108.7" text-anchor="end" font-size="12" fill="#8b929b">300</text><line x1="74" x2="988" y1="63.3" y2="63.3" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="67.3" text-anchor="end" font-size="12" fill="#8b929b">600</text><line x1="74" x2="988" y1="22.0" y2="22.0" stroke="#9aa0a8" stroke-width="1" opacity=".28"/><text x="67" y="26.0" text-anchor="end" font-size="12" fill="#8b929b">900</text><path d="M74.0,112.9 C90.9,112.4 141.7,111.1 175.6,109.5 C209.4,107.9 243.3,106.4 277.1,103.3 C311.0,100.2 344.8,94.1 378.7,90.9 C412.5,87.7 446.4,86.3 480.2,84.0 C514.1,81.7 547.9,75.5 581.8,77.1 C615.6,78.7 649.5,87.1 683.3,93.6 C717.2,100.2 751.0,112.2 784.9,116.4 C818.7,120.5 852.6,118.0 886.4,118.4 C920.3,118.9 971.1,119.0 988.0,119.1 L988.0,146.0 L74,146.0 Z" fill="url(#pg3)"/><path d="M74.0,112.9 C90.9,112.4 141.7,111.1 175.6,109.5 C209.4,107.9 243.3,106.4 277.1,103.3 C311.0,100.2 344.8,94.1 378.7,90.9 C412.5,87.7 446.4,86.3 480.2,84.0 C514.1,81.7 547.9,75.5 581.8,77.1 C615.6,78.7 649.5,87.1 683.3,93.6 C717.2,100.2 751.0,112.2 784.9,116.4 C818.7,120.5 852.6,118.0 886.4,118.4 C920.3,118.9 971.1,119.0 988.0,119.1" fill="none" stroke="#1F7A4A" stroke-width="2.6" stroke-linejoin="round"/><circle cx="74.0" cy="112.9" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="74.0" y1="146.0" x2="74.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="74.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 74.0,178)">Bamberg</text><circle cx="175.6" cy="109.5" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="175.6" y1="146.0" x2="175.6" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="175.6" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 175.6,178)">Lichtenfels</text><circle cx="277.1" cy="103.3" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="277.1" y1="146.0" x2="277.1" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="277.1" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 277.1,178)">Kronach</text><circle cx="378.7" cy="90.9" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="378.7" y1="146.0" x2="378.7" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="378.7" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 378.7,178)">Wallenfels</text><circle cx="480.2" cy="84.0" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="480.2" y1="146.0" x2="480.2" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="480.2" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 480.2,178)">Ludwigsstadt</text><circle cx="581.8" cy="77.1" r="4" fill="#1F7A4A" stroke="#1F7A4A" stroke-width="1.8"/><text x="581.8" y="67.1" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A4A">500</text><line x1="581.8" y1="146.0" x2="581.8" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="581.8" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 581.8,178)">Lauenstein</text><circle cx="683.3" cy="93.6" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="683.3" y1="146.0" x2="683.3" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="683.3" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 683.3,178)">Probstzella</text><circle cx="784.9" cy="116.4" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="784.9" y1="146.0" x2="784.9" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="784.9" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 784.9,178)">Saalfeld</text><circle cx="886.4" cy="118.4" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="886.4" y1="146.0" x2="886.4" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="886.4" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 886.4,178)">Rudolstadt</text><circle cx="988.0" cy="119.1" r="2.6" fill="#ffffff" stroke="#1F7A4A" stroke-width="1.8"/><line x1="988.0" y1="146.0" x2="988.0" y2="150.0" stroke="#9aa0a8" stroke-width="1" opacity=".5"/><text x="988.0" y="178" text-anchor="end" font-size="12.5" fill="#5f6570" transform="rotate(-38 988.0,178)">Erfurt</text><text x="3" y="14" font-size="12" fill="#8b929b">m ü. NN</text></svg></div>
     <ul class="sched">
-      <li><span class="t">10:00</span><span>Abfahrt Bamberg</span></li>
+      <li><span class="t">10:00</span><span>Check-out und Abfahrt Bamberg</span></li>
       <li><span class="t">11:00</span><span>Kronach</span></li>
       <li><span class="t">11:45</span><span>Lauenstein – Fotostopp</span></li>
       <li><span class="t">12:30</span><span><b>Saalfeld – Mittagspause</b></span></li>
@@ -394,88 +389,114 @@
       <li><span class="t">16:30</span><span>Ankunft Wolfsburg</span></li>
     </ul>
     <div class="warn amber" style="margin:0 0 14px;font-size:13.5px;box-shadow:none">
-      <b class="t">Notausgang Kronach</b>
-      Nach einem langen Kerwa-Samstag kommt man selten pünktlich los. Wenn wir um 11:30 noch nicht in Kronach sind: ab dort auf die A73 über Coburg und Suhl nach Erfurt. Spart rund eine Stunde.
+      <b class="t">Zwei Entscheidungen für den Sonntagmorgen</b>
+      Check-out ist um 10:00, die Maschinen stehen im Hof – das Beladen geht also schnell.<br><br>
+      <b>Frühschoppen:</b> Ab 11:00 läuft der Frühschoppen im Festgebiet. Wer den mitnimmt, fährt gegen 12:30 los und ist um 19:00 zuhause.<br>
+      <b>Notausgang Kronach:</b> Sind wir um 11:30 noch nicht in Kronach, ab dort auf die A73 über Coburg und Suhl nach Erfurt – spart rund eine Stunde.<br><br>
+      Das 72. Fischerstechen um 15:00 bekommen wir nicht mehr mit, ohne die Heimfahrt in die Nacht zu schieben.
     </div>
     <div class="wplabel">calimoto-Wegpunkte</div>
     <div class="wp">Bamberg → Lichtenfels → Kronach → Steinwiesen → Wallenfels → Ludwigsstadt → Lauenstein → Probstzella → Saalfeld → Rudolstadt → Erfurt → [A71/A38/A7] → Sangerhausen → Göttingen → Seesen → Wolfsburg</div>
     <div class="acts">
-      <a class="pri" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Bamberg&destination=Wolfsburg&waypoints=Lichtenfels%7CKronach%7CLudwigsstadt%7CProbstzella%7CSaalfeld%2FSaale%7CErfurt%7CG%C3%B6ttingen%7CSeesen">↗ In Google Maps öffnen</a>
+      <a class="pri" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Wetzelstra%C3%9Fe%2013%2C%2096047%20Bamberg&destination=Wolfsburg&waypoints=Lichtenfels%7CKronach%7CLudwigsstadt%7CProbstzella%7CSaalfeld%2FSaale%7CErfurt%7CG%C3%B6ttingen%7CSeesen">↗ In Google Maps öffnen</a>
       <button type="button" class="zoomday" data-d="3">🗺 Auf der Karte zeigen</button>
     </div>
   </div>
 </div>
 
-<!-- ============================ INFO ============================ -->
-<div class="card" id="info">
-  <h2>Unterkünfte &amp; Motorräder</h2>
+<!-- ============================ UNTERKÜNFTE ============================ -->
+<div class="card" id="unterkuenfte">
+  <h2>Unterkünfte</h2>
+
   <div class="stay">
     <b class="t">RAHA Apartments – Maisonette mit Domblick</b>
     <div class="ad">Domplatz 11, 99084 Erfurt · Do 20. → Fr 21.08.</div>
-    <div class="row"><span>Lage</span><span>Direkt am Domplatz, alles fußläufig. Während der DomStufen-Festspiele steht die Tribüne auf dem Platz – mit Trubel und Beschallung bis in den späten Abend rechnen.</span></div>
-    <div class="row"><span>Motorräder</span><span><b>Vorab klären:</b> RAHA gibt bei mehreren Objekten kostenfreie Stellplätze bzw. Innenhöfe an – ob das für den Domplatz gilt, muss bestätigt werden. Nachfragen: Innenhof? 5 Motorräder? Zufahrt trotz Festspielen?</span></div>
-    <div class="row"><span>Alternative</span><span>Parkhaus Domplatz (Stadtwerke Erfurt), wenige Gehminuten. Abendtarif ab 18 Uhr laut Betreiber 6 € bis 7 Uhr früh – für Motorräder vorher telefonisch bestätigen lassen.</span></div>
+    <div class="row"><span>Check-in</span><span><b>ab 16:00</b>, schlüssellos. Zugangscodes kommen am Anreisetag automatisch per E-Mail und SMS. Check-out bis 11:00.</span></div>
+    <div class="row"><span>Motorräder</span><span>Öffentliche Motorradstellplätze wenige Gehminuten von der Wohnung. Notfalls Parkhaus Domplatz, ebenfalls fußläufig.</span></div>
+    <div class="row"><span>Lage</span><span>Direkt am Domplatz. Während der DomStufen-Festspiele steht die Tribüne auf dem Platz – bis in den späten Abend laut und voll.</span></div>
+    <div class="row"><span>Kontakt</span><span><a href="tel:+4915208234901">+49 1520 8234901</a> · <a href="https://guest.smoobu.com/?t=xen96a177d1&amp;b=151320451">digitale Gästemappe</a></span></div>
   </div>
+
   <div class="stay">
-    <b class="t">Hopfenhaus zur Einhornsbräu</b>
-    <div class="ad">Obere Sandstraße 2b, 96049 Bamberg · Fr 21. → So 23.08. (2 Nächte)</div>
-    <div class="row"><span>Lage</span><span>Mitten in der Sandstraße, also mitten in der Kerwa. Schlenkerla und Klosterbräu 2 Min., Klein-Venedig 3 Min., Dom 5 Min. Traumlage – und laut.</span></div>
-    <div class="row"><span>Motorräder</span><span><b>Kritisch.</b> Sandgebiet 19.–26.08. für Durchgangsverkehr gesperrt. Vermieter <b>sofort</b> fragen: Innenhof, Anliegergenehmigung, Zufahrtsfenster zum Ausladen?</span></div>
-    <div class="row"><span>Alternative</span><span>Parkhäuser Geyerswörth / Georgendamm, wenige Gehminuten. Oder P+R Heinrichsdamm bzw. Kronacher Straße, 4 € inkl. Bus zum ZOB.</span></div>
+    <b class="t">Bamberg Altstadt – Familienwohnung mit Badewanne</b>
+    <div class="ad">Wetzelstraße 13, 96047 Bamberg · Fr 21. → So 23.08. · Gastgeber: Sevenhills</div>
+    <div class="row"><span>Check-in</span><span><b>ab 15:00</b>, Check-out <b>bis 10:00</b>. Max. 5 Gäste, Ruhezeiten 22:00–06:00. Buchung nicht erstattungsfähig.</span></div>
+    <div class="row"><span>Motorräder</span><span><b>Stellplätze im Hinterhof der Unterkunft.</b> Damit ist das Thema erledigt – keine Nachtfahrt zum Parkplatz, kein offener Platz im Festgebiet.</span></div>
+    <div class="row"><span>Lage</span><span>Östlich der Altstadt, außerhalb des gesperrten Sandgebiets – die Zufahrt ist also auch abends frei. Ruhig gelegen, wir schlafen 20 Minuten neben dem Fest statt darin.</span></div>
+    <div class="row"><span>Kontakt</span><span><a href="tel:+491748800525">+49 174 8800525</a> · <a href="https://www.airbnb.de/rooms/1586282816483083095">Airbnb-Inserat</a> · Code HMPCHMA5Z3</span></div>
   </div>
-  <h3>Diebstahlschutz – zwei Nächte im Festgebiet</h3>
-  <p style="font-size:14.5px;margin:0">Bei 200.000 Besuchern in fünf Tagen ist ein unbeaufsichtigter Parkplatz kein guter Ort für fünf Maschinen. <b>Bremsscheibenschlösser mitnehmen</b> und die Bikes zusätzlich mit einer Kette untereinander verbinden – wer eine klaut, müsste alle bewegen. Parkhaus mit Kamera und Schranke bevorzugen, Gepäck und Helme mit hoch in die Wohnung, Topcase leer lassen.</p>
+
+  <h3>Von der Wetzelstraße in die Altstadt</h3>
+  <table>
+    <tbody>
+      <tr><td class="tm">19 Min</td><td><b>Zu Fuß zum Alten Rathaus</b> · 1,4 km über die Schützenstraße. Der Standardweg in die Innenstadt.</td></tr>
+      <tr><td class="tm">21 Min</td><td><b>Zu Fuß in die Obere Sandstraße</b> · 1,7 km über die Herzog-Max-Straße, mitten ins Festgebiet.</td></tr>
+      <tr><td class="tm">bis 1:30</td><td><b>Nachtbusse</b> 935, 936, 937, 938 ab ZOB – Donnerstag bis Samstag bis 1:30 Uhr, Sonntag bis 0:50 Uhr.</td></tr>
+      <tr><td class="tm">~10 €</td><td><b>Taxi</b> zurück, wenn es spät wird. Zu fünft die entspannteste Variante.</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Das Sandgebiet ist vom 19. bis 26. August für den Durchgangsverkehr gesperrt. Unsere Wohnung liegt außerhalb – die Sperrung betrifft uns nur zu Fuß, nicht bei der Anfahrt.</div>
 </div>
 
+<!-- ============================ SANDKERWA ============================ -->
+<div class="card" id="kerwa">
+  <h2>76. Bamberger Sandkerwa · was wann läuft</h2>
+  <p style="font-size:14.5px;margin:0 0 13px">Das Fest läuft vom 20. bis 24. August rund um die Sandstraße und Klein-Venedig, rund 200.000 Besucher über fünf Tage. Wir sind Freitag und Samstag dabei.</p>
+  <table>
+    <thead><tr><th colspan="2">Freitag, 21.08.</th></tr></thead>
+    <tbody>
+      <tr><td class="tm">17:30</td><td>Standkonzert am Markusplatz</td></tr>
+      <tr><td class="tm">17:45</td><td><b>Festzug zum Kirchweihbaum</b> – Markusplatz, Markusbrücke, Untere und Obere Sandstraße, Kasernstraße, Leinritt</td></tr>
+      <tr><td class="tm">18:00</td><td><b>Aufstellung des Kirchweihbaums</b> vor Klein-Venedig, danach Proklamation des Sandschützenkönigs</td></tr>
+    </tbody>
+    <thead><tr><th colspan="2">Samstag, 22.08.</th></tr></thead>
+    <tbody>
+      <tr><td class="tm">14:00</td><td>Schüler- und Jugendfischerstechen auf der Regnitz, dazu Entenrennen</td></tr>
+      <tr><td class="tm">15:00</td><td>Orgelkonzert zur Sandkerwa im Kaiserdom</td></tr>
+      <tr><td class="tm">abends</td><td><b>Hauptabend</b> – Livemusik auf allen Bühnen, Vergnügungspark am Markusplatz</td></tr>
+    </tbody>
+    <thead><tr><th colspan="2">Sonntag, 23.08. · unser Abreisetag</th></tr></thead>
+    <tbody>
+      <tr><td class="tm">09:30</td><td>Festgottesdienst am Elisabethenplatz</td></tr>
+      <tr><td class="tm">11:00</td><td><b>Frühschoppen im Festgebiet</b> – die einzige Nummer, die wir noch mitnehmen könnten</td></tr>
+      <tr><td class="tm">15:00</td><td>72. Fischerstechen auf der Regnitz – zu spät für uns</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Was wir verpassen: das Fischerstechen am Sonntag und das Abschlussfeuerwerk am Montag um 22:00 Uhr. Dafür erwischen wir mit dem Kirchweihbaum am Freitag und dem Hauptabend am Samstag die beiden lebhaftesten Momente. Programmänderungen vorbehalten, aktuelles auf sandkerwa.de.</div>
+</div>
+
+<!-- ============================ VOR DER ABFAHRT ============================ -->
 <div class="card">
-  <h2>calimoto – Setup vor der Abfahrt</h2>
+  <h2>Vor der Abfahrt</h2>
   <ul class="chk">
-    <li><b>Offline-Karten laden:</b> Niedersachsen, Sachsen-Anhalt, Thüringen, Bayern. Im Harz und im Frankenwald gibt es Funklöcher.</li>
-    <li><b>Wegpunkte statt „kurvig“-Automatik:</b> die Ortslisten oben eintippen. Der Kurven-Regler allein schickt euch sonst über Feldwege.</li>
-    <li><b>Autobahn-Einstellung pro Tag umstellen:</b> Donnerstag bis Goslar und Sonntag ab Erfurt bewusst <i>mit</i> Autobahn, dazwischen aus.</li>
-    <li><b>Samstag als Rundtour anlegen</b> – Start und Ziel Bamberg, dann rechnet calimoto die Schleife sauber durch.</li>
-    <li><b>Touren in der Gruppe teilen:</b> einer plant, exportiert, schickt die Links in die WhatsApp-Gruppe.</li>
+    <li><b>calimoto:</b> Offline-Karten für Niedersachsen, Sachsen-Anhalt, Thüringen und Bayern laden – im Harz und im Frankenwald gibt es Funklöcher.</li>
+    <li><b>Vier Touren anlegen</b> und in der Gruppe teilen. Die Wegpunktlisten oben eintippen, statt den Kurven-Regler allein arbeiten zu lassen. Autobahn: Donnerstag bis Goslar und Sonntag ab Erfurt an, dazwischen aus.</li>
+    <li><b>Regenzeug griffbereit</b>, nicht unten im Koffer. Donnerstag im Harz ist mit Schauern zu rechnen.</li>
+    <li><b>Warme Schicht</b> für die Abende – nachts 12 bis 13 Grad.</li>
     <li><b>Powerbank oder Ladehalterung</b> – calimoto mit Display an zieht den Akku in drei Stunden leer.</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>Was jetzt noch zu tun ist</h2>
-  <ul class="chk">
-    <li><span class="p now">SOFORT</span>Hopfenhaus anschreiben: Stellplatz für 5 Motorräder während der Sandkerwa?</li>
-    <li><span class="p now">SOFORT</span>RAHA Erfurt anschreiben: Innenhof oder Stellplätze am Domplatz während der Festspiele?</li>
-    <li><span class="p soon">DIESE WOCHE</span>Sandkerwa-Programm checken – wann ist Fischerstechen, wann das Feuerwerk?</li>
-    <li><span class="p soon">DIESE WOCHE</span>Donnerstagabend Erfurt: Tisch für 5 reservieren.</li>
-    <li><span class="p soon">DIESE WOCHE</span>DomStufen-Festspiele: Karten für Donnerstag noch verfügbar?</li>
-    <li><span class="p ok">VOR ABFAHRT</span>Wetter ab Mo 17.08. prüfen – die Hitze endet um den 20.08., Regenzeug einpacken.</li>
-    <li><span class="p ok">VOR ABFAHRT</span>calimoto: Offline-Karten laden, vier Touren anlegen, in der Gruppe teilen.</li>
-    <li><span class="p ok">VOR ABFAHRT</span>Bremsscheibenschlösser, Kette, Ohrstöpsel, Powerbank.</li>
-    <li><span class="p ok">VOR ABFAHRT</span>Donnerstag vollgetankt starten – erste Tankpause erst in Goslar.</li>
+    <li><b>Donnerstag vollgetankt starten</b>, erste Tankpause erst in Goslar.</li>
+    <li><b>Erfurt:</b> Tisch für 5 reservieren, Michaelisstraße oder Andreasviertel.</li>
   </ul>
   <a class="toTop" href="#">↑ nach oben</a>
 </div>
 
 <footer>
-  Planungsstand 12.08.2026 · Termine und Sperrungen vor Abfahrt noch einmal prüfen<br>
-  Gute Fahrt und immer genug Grip 🏍
+  Stand 18.08.2026 · Wetter und Programm vor Abfahrt noch einmal prüfen<br>
+  Gute Fahrt und immer genug Grip
 </footer>
 
 </div>
 
 <script>
-/* ============================================================
-   Aufbau: Die Seite funktioniert vollständig OHNE Karte.
-   Die interaktive Karte wird danach optional nachgeladen.
-   Kein Schritt darf einen späteren Schritt blockieren.
-   ============================================================ */
 (function(){
 "use strict";
 var C=['#E4572E','#1F7A8C','#6A4C93','#1F7A4A'];
+var BA=[49.8855,10.8993], ER=[50.9787,11.0328];
 var DAYS=[
- {n:'Do · Harz + Kyffhäuser',km:'305 km',c:C[0],p:[[52.4227,10.7865],[52.2689,10.5268],[52.1503,10.3594],[51.9048,10.4287],[51.8600,10.4470],[51.8300,10.4400],[51.8028,10.4444],[51.8028,10.5361],[51.7264,10.6119],[51.6472,10.6667],[51.5833,10.6667],[51.5028,10.7947],[51.4600,10.9200],[51.4333,11.0500],[51.4128,11.1108],[51.3556,11.1000],[51.2500,11.0333],[51.1100,11.0500],[50.9787,11.0328]]},
- {n:'Fr · Rennsteig + Obermain',km:'245 km',c:C[1],p:[[50.9787,11.0328],[50.8383,10.9469],[50.7736,11.0783],[50.6836,10.9139],[50.6667,10.8500],[50.6167,10.8500],[50.5167,11.1333],[50.4833,11.1667],[50.4333,11.1500],[50.3583,11.1750],[50.3236,11.1197],[50.2583,10.9647],[50.1119,11.0233],[50.1236,11.0644],[50.1000,11.0000],[50.0000,10.9833],[49.9400,10.9200],[49.8917,10.8917]]},
- {n:'Sa · Fränkische Schweiz',km:'205 km',c:C[2],p:[[49.8917,10.8917],[49.9750,11.0333],[49.8611,11.1917],[49.8917,11.2417],[49.8500,11.3500],[49.7708,11.4064],[49.7833,11.3667],[49.7778,11.3167],[49.7667,11.3389],[49.7972,11.2917],[49.7833,11.2667],[49.7806,11.1833],[49.7000,11.1500],[49.7194,11.0589],[49.8167,10.9833],[49.8917,10.8917]]},
- {n:'So · Frankenwald + Heimweg',km:'425 km',c:C[3],p:[[49.8917,10.8917],[50.1461,11.0597],[50.2411,11.3306],[50.2986,11.4653],[50.4000,11.4400],[50.4931,11.4256],[50.4986,11.4306],[50.5333,11.3833],[50.6500,11.3667],[50.7206,11.3400],[50.8500,11.2000],[50.9787,11.0328],[51.2000,11.1500],[51.4722,11.2972],[51.5413,9.9158],[51.7069,9.9986],[51.8919,10.1786],[52.1503,10.3594],[52.2689,10.5268],[52.4227,10.7865]]}
+ {n:'Do · Harz + Kyffhäuser',km:'305 km',c:C[0],p:[[52.4227,10.7865],[52.2689,10.5268],[52.1503,10.3594],[51.9048,10.4287],[51.8600,10.4470],[51.8300,10.4400],[51.8028,10.4444],[51.8028,10.5361],[51.7264,10.6119],[51.6472,10.6667],[51.5833,10.6667],[51.5028,10.7947],[51.4600,10.9200],[51.4333,11.0500],[51.4128,11.1108],[51.3556,11.1000],[51.2500,11.0333],[51.1100,11.0500],ER]},
+ {n:'Fr · Rennsteig + Obermain',km:'250 km',c:C[1],p:[ER,[50.8383,10.9469],[50.7736,11.0783],[50.6836,10.9139],[50.6667,10.8500],[50.6167,10.8500],[50.5167,11.1333],[50.4833,11.1667],[50.4333,11.1500],[50.3583,11.1750],[50.3236,11.1197],[50.2583,10.9647],[50.1119,11.0233],[50.1236,11.0644],[50.1000,11.0000],[50.0000,10.9833],[49.9400,10.9200],BA]},
+ {n:'Sa · Fränkische Schweiz',km:'205 km',c:C[2],p:[BA,[49.9750,11.0333],[49.8611,11.1917],[49.8917,11.2417],[49.8500,11.3500],[49.7708,11.4064],[49.7833,11.3667],[49.7778,11.3167],[49.7667,11.3389],[49.7972,11.2917],[49.7833,11.2667],[49.7806,11.1833],[49.7000,11.1500],[49.7194,11.0589],[49.8167,10.9833],BA]},
+ {n:'So · Frankenwald + Heimweg',km:'425 km',c:C[3],p:[BA,[50.1461,11.0597],[50.2411,11.3306],[50.2986,11.4653],[50.4000,11.4400],[50.4931,11.4256],[50.4986,11.4306],[50.5333,11.3833],[50.6500,11.3667],[50.7206,11.3400],[50.8500,11.2000],ER,[51.2000,11.1500],[51.4722,11.2972],[51.5413,9.9158],[51.7069,9.9986],[51.8919,10.1786],[52.1503,10.3594],[52.2689,10.5268],[52.4227,10.7865]]}
 ];
 var STOPS=[
  [51.8300,10.4400,'Okertalsperre','B498 · Kurve an Kurve am Wasser',0],
@@ -493,18 +514,14 @@ var STOPS=[
  [50.4986,11.4306,'Burg Lauenstein','Letzter Fotostopp der Tour',3]
 ];
 var BEDS=[
- [50.9787,11.0328,'Erfurt','Do-Nacht · RAHA Apartments, Domplatz 11'],
- [49.8917,10.8917,'Bamberg','Fr + Sa · Hopfenhaus, Obere Sandstraße 2b']
+ [ER[0],ER[1],'Erfurt','Do-Nacht · RAHA Apartments, Domplatz 11'],
+ [BA[0],BA[1],'Bamberg','Fr + Sa · Wetzelstraße 13 · Stellplätze im Hof']
 ];
 var $=function(s,r){return (r||document).querySelector(s);};
 var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
-function safe(label,fn){ try{ fn(); }catch(e){ if(window.console&&console.warn) console.warn('['+label+']',e); } }
+function safe(l,fn){ try{ fn(); }catch(e){ if(window.console&&console.warn) console.warn('['+l+']',e); } }
 
-/* ---------- 1. Höhenprofile sind fest im HTML hinterlegt ---------- */
-
-/* ---------- 2. Bedienelemente – funktionieren auch ohne Karte ---------- */
-var MAP=null;                 /* wird gesetzt, sobald Leaflet läuft */
-var mapwrap=$('#mapwrap'), mapstat=$('#mapstat'), focusKey='all';
+var MAP=null, mapwrap=$('#mapwrap'), mapstat=$('#mapstat'), focusKey='all';
 
 function setFocus(k){
   focusKey=String(k);
@@ -513,9 +530,7 @@ function setFocus(k){
   if(MAP) safe('focus',function(){ MAP.focusDay(focusKey); });
 }
 safe('chips',function(){
-  $$('.dchip').forEach(function(b){
-    b.addEventListener('click',function(){ setFocus(b.getAttribute('data-d')); });
-  });
+  $$('.dchip').forEach(function(b){ b.addEventListener('click',function(){ setFocus(b.getAttribute('data-d')); }); });
 });
 safe('zoomday',function(){
   $$('.zoomday').forEach(function(b){
@@ -539,7 +554,6 @@ safe('fullscreen',function(){
   });
 });
 
-/* ---------- 3. Interaktive Karte nachladen (mit CDN-Kette) ---------- */
 var CDN=[
   {css:'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', js:'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'},
   {css:'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css', js:'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js'},
@@ -572,9 +586,8 @@ function mapFailed(err){
 if(document.readyState==='complete') tryCdn(0);
 else window.addEventListener('load',function(){ tryCdn(0); });
 
-/* ---------- 4. Kartenaufbau ---------- */
 function initMap(){
-  var mapEl=$('#map'), staticEl=$('#mapstatic');
+  var mapEl=$('#map');
   var ATTR='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende';
   var DARK=!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
   var map=L.map(mapEl,{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
@@ -628,7 +641,6 @@ function initMap(){
   var ALL=L.latLngBounds(pts);
   map.fitBounds(ALL,{padding:[16,16]});
 
-  /* Legende */
   var lg=L.control({position:'bottomleft'});
   lg.onAdd=function(){
     var el=L.DomUtil.create('div','maplegend');
@@ -639,12 +651,10 @@ function initMap(){
   };
   lg.addTo(map);
 
-  /* --- Bedienung je nach Eingabegeraet: (pointer:coarse) trennt Handy/Tablet vom Mac --- */
   var coarse=!!(window.matchMedia&&window.matchMedia('(pointer: coarse)').matches)||
              (!window.matchMedia&&('ontouchstart' in window));
   var GEST=coarse?'Karte mit <b>zwei Fingern</b> bewegen, im Vollbild mit einem Finger.'
                  :'Zum Zoomen einmal in die Karte klicken.';
-  /* Mauszoom immer verdrahten - stoert auf Touchgeraeten nicht */
   map.on('click',function(){ map.scrollWheelZoom.enable(); });
   map.on('mouseout',function(){ if(!document.body.classList.contains('fs')) map.scrollWheelZoom.disable(); });
   if(coarse){
@@ -660,7 +670,6 @@ function initMap(){
     },{passive:true});
   }
 
-  /* --- Stilumschalter --- */
   var seg=$('#styleSeg'); seg.hidden=false;
   var NOTES={
     modern:'Moderne Basiskarte mit eingeblendeter Geländeschummerung – Orte und Straßen bleiben lesbar, die Berge trotzdem plastisch.',
@@ -681,7 +690,6 @@ function initMap(){
     });
   });
 
-  /* --- echte Strassenfuehrung nachladen --- */
   routeMsg='<span style="opacity:.75">Straßenverlauf wird berechnet …</span>'; renderStat();
   function hhmm(h){return Math.floor(h)+':'+('0'+Math.round((h%1)*60)).slice(-2)+' h';}
   function osrm(i){
@@ -728,7 +736,6 @@ function initMap(){
     if(typeof fetch==='function') next(); else fin();
   })();
 
-  /* Schnittstelle nach außen */
   var api={
     focusDay:function(k){
       lay.forEach(function(l,i){
@@ -746,7 +753,6 @@ function initMap(){
       },230);
     }
   };
-  /* erst jetzt, wenn alles fehlerfrei stand, die Karte einblenden */
   MAP=api;
   map.invalidateSize();
   map.fitBounds(ALL,{padding:[16,16]});
